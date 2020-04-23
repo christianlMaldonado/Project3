@@ -1,0 +1,31 @@
+{
+  "name": "Project3",
+  "version": "1.0.0",
+  "description": "Group Project 3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christianlMaldonado/Project3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christianlMaldonado/Project3/issues"
+  },
+  "homepage": "https://github.com/christianlMaldonado/Project3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.6",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0"
+  }
+}
