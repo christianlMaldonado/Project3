@@ -18,6 +18,10 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  isStudent: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const User = (module.exports = mongoose.model("User", UserSchema));
