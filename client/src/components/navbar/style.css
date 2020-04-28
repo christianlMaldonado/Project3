@@ -5,12 +5,15 @@
   background-color: rgb(149, 184, 212);
   position: fixed;
   transition: all 0.3s ease;
+  z-index: 4;
 }
 
 .fa {
   text-align: center;
   margin-bottom: 20px;
   transition: all 1.5s ease;
+  color: rgb(219, 219, 219);
+  padding-left: 10px;
 }
 
 .nav:hover {
@@ -18,8 +21,7 @@
 }
 
 .fa:hover {
-  color: rgb(219, 219, 219);
-  padding-left: 30px;
+  color: white;
 }
 
 .fa:hover:after {

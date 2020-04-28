@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Grades() {
+function Tables() {
   return (
     <>
       <div className="title">Grades</div>
@@ -12,4 +12,4 @@ function Grades() {
   );
 }
 
-export default Grades;
+export default Tables;
