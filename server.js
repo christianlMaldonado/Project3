@@ -28,7 +28,9 @@ require("./config/passport")(passport);
 
 app.use("/users", users);
 
-app.use(express.static(path.join(__dirname, "public")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // index route
 app.get("/", (req, res) => {
