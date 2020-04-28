@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/navbar/navbar";
-import Footer from "./components/footer/footer";
 import Home from "./components/home/home";
 import Grades from "./components/grades/grades";
 import Attendance from "./components/attendance/attendance";
 import Assignments from "./components/assignments/assignments";
+import Mail from "./components/mail/mail";
 import "./App.css";
 
 function App() {
@@ -13,7 +13,6 @@ function App() {
     <>
       <div className="App">
         <Navbar />
-        <Footer />
       </div>
       <Router>
         <div>
@@ -22,6 +21,7 @@ function App() {
             <Route exact path="/grades" component={Grades} />
             <Route exact path="/attendance" component={Attendance} />
             <Route exact path="/assignments" component={Assignments} />
+            <Route exact path="/mail" component={Mail} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>

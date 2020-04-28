@@ -4,15 +4,29 @@
   width: 50px;
   background-color: rgb(149, 184, 212);
   position: fixed;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+}
+
+.fa {
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 1.5s ease;
 }
 
 .nav:hover {
-  width: 200px;
+  padding-right: 100px;
 }
 
-.nav .fa:hover {
+.fa:hover {
   color: rgb(219, 219, 219);
+  padding-left: 30px;
+}
+
+.fa:hover:after {
+  content: attr(data-hover);
+  color: white;
+  font-size: 18px;
+  padding-left: 5px;
 }
 
 ul {
@@ -23,12 +37,4 @@ ul {
 a {
   text-decoration: none;
   color: white;
-}
-
-.show {
-  display: none;
-}
-
-.show:hover {
-  display: contents;
 }
