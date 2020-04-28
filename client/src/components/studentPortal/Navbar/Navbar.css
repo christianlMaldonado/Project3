@@ -5,6 +5,7 @@
     background-color: rgb(149, 184, 212);
     position: fixed;
     transition: all 0.5s ease;
+    
   }
   .nav:hover {
     width: 200px;
