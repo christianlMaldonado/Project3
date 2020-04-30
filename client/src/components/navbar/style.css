@@ -1,0 +1,48 @@
+.nav {
+  left: 0;
+  height: 100%;
+  width: 80px;
+  background-color: rgb(149, 184, 212);
+  position: fixed;
+  transition: all 0.2s ease;
+  z-index: 4;
+}
+
+.fa {
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.8s ease;
+  color: rgb(219, 219, 219);
+  padding-right: 90px;
+}
+
+.nav:hover {
+  padding-right: 100px;
+}
+
+.fa:hover {
+  padding-left: 20px;
+}
+
+.fa:hover:after {
+  content: attr(data-hover);
+  color: white;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+}
