@@ -30,15 +30,11 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "if-env": "^1.0.4",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
-=======
     "if-env": "^1.0.4",
->>>>>>> 3ba666cee31efd7d1c6a4d787b64c85e845c35e0
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.6",
     "passport": "^0.4.1",
