@@ -1,0 +1,42 @@
+.nav {
+  left: 0;
+  height: 100%;
+  width: 50px;
+  background-color: rgb(149, 184, 212);
+  position: fixed;
+  transition: all 0.3s ease;
+  z-index: 4;
+}
+
+.fa {
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 1.5s ease;
+  color: rgb(219, 219, 219);
+  padding-left: 10px;
+}
+
+.nav:hover {
+  padding-right: 100px;
+}
+
+.fa:hover {
+  color: white;
+}
+
+.fa:hover:after {
+  content: attr(data-hover);
+  color: white;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
