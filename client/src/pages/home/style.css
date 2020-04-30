@@ -22,7 +22,7 @@
 .home-tile {
   height: 300px;
   width: 40%;
-  margin-left: 5%;
+  margin-left: 7%;
   margin-top: 2%;
   background-color: rgb(80, 108, 131);
   float: left;
@@ -39,6 +39,7 @@
   margin-top: 2%;
   margin-left: 1%;
   margin-right: 1%;
+  margin-bottom: 30px;
   padding: 10px;
   height: 200px;
   text-align: center;

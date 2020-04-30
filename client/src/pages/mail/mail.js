@@ -6,7 +6,9 @@ function Mail() {
     <>
       <div className="title">Mail Center</div>
       <div className="container">
-        <div className="mail">Mail Stuff Here!, use tables for data?</div>
+        <div className="mail">
+          <div className="table-container"></div>
+        </div>
       </div>
     </>
   );
