@@ -10,7 +10,10 @@ const app = express();
 const users = require("./routes/users");
 const PORT = process.env.PORT || 5001;
 
-mongoose.connect(config.database);
+mongoose.connect(process.env.MONGODB_URI || config.database, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 mongoose.connection.on("connected", () => {
   console.log("connected to database " + config.database);
