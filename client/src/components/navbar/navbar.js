@@ -6,7 +6,7 @@ function Navbar() {
     <div className="nav">
       <ul>
         <li>
-          <a href="/">
+          <a href="/home">
             <i className="fa fa-home" data-hover="Home"></i>
           </a>
         </li>
