@@ -7,7 +7,7 @@ const config = require("./config/database");
 
 const app = express();
 const users = require("./routes/users");
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 mongoose.connect(config.database);
 
