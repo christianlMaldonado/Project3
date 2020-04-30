@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.nav {
+  left: 0;
+  height: 100%;
+  width: 50px;
+  background-color: rgb(149, 184, 212);
+  position: fixed;
+  transition: all 0.5s ease;
+}
+.nav:hover {
+  width: 100px;
+}
+
