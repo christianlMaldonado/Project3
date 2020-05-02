@@ -1,27 +1,28 @@
 .nav {
   left: 0;
   height: 100%;
-  width: 80px;
+  width: 80px !important;
   background-color: rgb(149, 184, 212);
   position: fixed;
-  transition: all 0.2s ease;
+  transition: width 0.1s;
   z-index: 4;
 }
 
 .fa {
   text-align: center;
   margin-bottom: 20px;
-  transition: all 0.8s ease;
+  transition: all 0.1s ease;
   color: rgb(219, 219, 219);
-  padding-right: 90px;
+  padding-bottom: 10px;
 }
 
 .nav:hover {
-  padding-right: 100px;
+  padding-right: 160px;
 }
 
 .fa:hover {
-  padding-left: 20px;
+  margin-left: -15px;
+  transition: all 0.1s ease;
 }
 
 .fa:hover:after {
@@ -33,7 +34,7 @@
 
 ul {
   list-style-type: none;
-  margin-left: -10px;
+  margin-left: 30px;
 }
 
 a {
