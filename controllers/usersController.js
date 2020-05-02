@@ -22,10 +22,10 @@ module.exports = {
     });
   },
   authentication: function (req, res) {
-    const username = req.body.username;
+    const email = req.body.email;
     const password = req.body.password;
 
-    User.getUserByUsername(username, (err, user) => {
+    User.getUserByUsername(email, (err, user) => {
       if (err) throw err;
       if (!user) {
         return res.json({ success: false, msg: "User not found" });

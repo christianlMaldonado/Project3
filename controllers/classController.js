@@ -9,6 +9,7 @@ module.exports = {
       username: req.body.username,
       password: req.body.password,
       isStudent: req.body.isStudent,
+      student: { attendence: [], grades: [] },
     });
 
     User.addUser(newStudent, (err, user) => {
@@ -20,11 +21,14 @@ module.exports = {
     });
   },
   addHomework: function (req, res) {
-    User.updateMany({ isStudent: true }, { $push: { assignment: req.body.assignment } }).then(
-      function (homework) {
-        res.json({ success: true, msg: homework + " added" });
-      }
-    );
+    User.updateMany(
+      { isStudent: true },
+      { $set: { student: { grades: { assignment: req.body.assignment } } } }
+      // { student: { $push: { grades: { assignment: req.body.assignment } } } }
+    ).then(function (homework) {
+      console.log(homework);
+      res.json({ success: true, msg: homework + " added" });
+    });
   },
   gradeAssignment: function (req, res) {
     const homework = {
