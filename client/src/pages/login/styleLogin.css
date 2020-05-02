@@ -7,6 +7,17 @@
   color: white !important;
 }
 
+.MuiAvatar-root {
+  margin-left: 45%;
+  margin-top: 25vh;
+  margin-bottom: 2%;
+}
+
+.MuiGrid-container {
+  margin-top: 2%;
+  display: block !important;
+}
+
 input[type="text"]:not(.browser-default):focus:not([read-only]) {
   border-bottom: 2px solid rgb(119, 147, 172) !important;
   box-shadow: none !important;
