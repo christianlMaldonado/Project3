@@ -13,8 +13,8 @@ export default {
   gradeAssignment: function(student, homework) {
     return axios.put("/classroom/" + homework + "/" + student);
   },
-  takeAttendence: function(student) {
-    return axios.put("classroom/attendence/" + student);
+  takeAttendance: function(student) {
+    return axios.put("classroom/attendance", student);
   },
   registerTeacher: function(teacher) {
     return axios.post("/users/register", teacher);

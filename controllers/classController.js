@@ -9,7 +9,7 @@ module.exports = {
       username: req.body.username,
       password: req.body.password,
       isStudent: req.body.isStudent,
-      student: { attendence: [], grades: [] },
+      student: [],
     });
 
     User.addUser(newStudent, (err, user) => {
@@ -23,8 +23,7 @@ module.exports = {
   addHomework: function (req, res) {
     User.updateMany(
       { isStudent: true },
-      { $set: { student: { grades: { assignment: req.body.assignment } } } }
-      // { student: { $push: { grades: { assignment: req.body.assignment } } } }
+      { $set: { student: { grades: { assignment: req.body.assignment, grade: 0 } } } }
     ).then(function (homework) {
       console.log(homework);
       res.json({ success: true, msg: homework + " added" });
@@ -32,20 +31,40 @@ module.exports = {
   },
   gradeAssignment: function (req, res) {
     const homework = {
-      username: req.params.student,
-      assignment: req.params.assignment,
+      username: req.body.student,
+      assignment: req.body.assignment,
+      grade: req.body.grade,
     };
-
-    User.getUserByUsername(homework.username, (err, student) => {
-      if (err) throw err;
-      if (!student) {
-        return res.json({ success: false, msg: "Student not found" });
+    User.findOneAndUpdate(
+      { username: homework.username },
+      { $set: { student: { grades: { assignment: homework.assignment, grade: homework.grade } } } },
+      { $upsert: true },
+      (err, student) => {
+        if (err) throw err;
+        if (!student) {
+          return res.json({ success: false, msg: "Student not found" });
+        }
+        res.json(student);
       }
-
-      User.findOneAndUpdate(homework.assignment, { $set });
-    });
+    );
   },
-  attendence: function (req, res) {
-    res.json({ success: true, msg: "attendence" });
+  attendance: function (req, res) {
+    const isPresent = {
+      username: req.body.student,
+      date: Date.now(),
+      present: req.body.present,
+    };
+    User.findOneAndUpdate(
+      { username: isPresent.username },
+      { $set: { attendance: { date: isPresent.date, present: isPresent.present } } },
+      { $upsert: true },
+      (err, student) => {
+        if (err) throw err;
+        if (!student) {
+          return res.json({ success: false, msg: "Student not found" });
+        }
+        res.json({ success: true, msg: "Attendance taken" });
+      }
+    );
   },
 };

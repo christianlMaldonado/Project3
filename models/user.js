@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const config = require("../config/database");
 
 const StudentSchema = mongoose.Schema({
-  attendance: [{ date: Date, present: Boolean }],
+  attendance: [{ date: { type: Date, default: Date.now }, present: Boolean }],
   grades: [{ assignment: String, grade: Number }],
 });
 
@@ -27,7 +27,7 @@ const UserSchema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  student: StudentSchema,
+  student: [StudentSchema],
 });
 
 const User = (module.exports = mongoose.model("User", UserSchema));
