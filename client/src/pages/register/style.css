@@ -1,0 +1,56 @@
+.center {
+  text-align: center;
+}
+
+.MuiAvatar-root {
+  margin-left: 45%;
+  margin-top: 20vh;
+  margin-bottom: 2%;
+}
+
+.MuiGrid-container {
+  margin-top: 2%;
+  display: block !important;
+}
+
+.MuiInput-root {
+  width: 220%;
+}
+
+input[type="text"]:not(.browser-default):focus:not([read-only]) {
+  border-bottom: 2px solid rgb(119, 147, 172) !important;
+  box-shadow: none !important;
+}
+
+input[type="text"]:not(.browser-default) {
+  border-color: lightgray !important;
+}
+
+input[type="password"]:not(.browser-default):focus:not([read-only]) {
+  border-bottom: 2px solid rgb(119, 147, 172) !important;
+  box-shadow: none !important;
+}
+
+input[type="password"]:not(.browser-default) {
+  border-color: lightgray !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: rgb(119, 147, 172) !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: none !important;
+}
+
+.MuiInput-underline {
+  border-bottom: none !important;
+}
+
+.MuiInput-underline:after {
+  border-bottom: none !important;
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: none !important;
+}

@@ -25,12 +25,6 @@ function Navbar() {
             <i className="fa fa-pencil" data-hover="Assignments"></i>
           </a>
         </li>
-
-        <li>
-          <a href="/mail">
-            <i className="fa fa-envelope" data-hover="Mail"></i>
-          </a>
-        </li>
       </ul>
     </div>
   );
