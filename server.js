@@ -8,6 +8,7 @@ const config = require("./config/database");
 
 const app = express();
 const users = require("./routes/users");
+const classroom = require("./routes/classroom");
 const PORT = process.env.PORT || 5001;
 
 mongoose.connect(process.env.MONGODB_URI || config.database, {
@@ -31,6 +32,7 @@ app.use(passport.session());
 require("./config/passport")(passport);
 
 app.use("/users", users);
+app.use("/classroom", classroom);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
