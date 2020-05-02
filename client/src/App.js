@@ -19,8 +19,8 @@ import "./App.css";
 function App() {
   const LoginContainer = () => (
     <>
-      <Route exact path="/" render={() => <Redirect to="/login" />} />
-      <Route path="/login" component={Login} />
+      <Route exact path="/" render={() => <Redirect to="/" />} />
+      <Route path="/" component={Login} />
     </>
   );
 
@@ -36,7 +36,6 @@ function App() {
       <Route exact path="/mail" component={Mail} />
       <Route exact path="/create" component={Create} />
       <Route exact path="/virtual" component={Virtual} />
-      {/* <Route component={NoMatch} /> */}
     </>
   );
 
@@ -45,8 +44,9 @@ function App() {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/login" component={LoginContainer} />
+            <Route exact path="/" component={LoginContainer} />
             <Route component={Default} />
+            {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>
       </Router>
