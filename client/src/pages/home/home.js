@@ -1,41 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css";
+import Tiles from "../../components/tiles";
+import home from "../../home.json";
 
-function Home() {
-  return (
-    <div className="home">
-      <div className="title">Welcome, "code for name here"</div>
-      <div className="container">
-        <a href="/attendance">
-          <div className="home-tile">
-            <h2>Attendance</h2>
-            <div className="tile-container">Data Here?</div>
-          </div>
-        </a>
+class Home extends Component {
+  state = { home };
 
-        <a href="/grades">
-          <div className="home-tile">
-            <h2>Grades</h2>
-            <div className="tile-container">Data Here?</div>
-          </div>
-        </a>
-
-        <a href="/virtual">
-          <div className="home-tile">
-            <h2>Virtual Classroom</h2>
-            <div className="tile-container">Data Here?</div>
-          </div>
-        </a>
-
-        <a href="/create">
-          <div className="home-tile">
-            <h2>Create an Assignment</h2>
-            <div className="tile-container">Data Here?</div>
-          </div>
-        </a>
+  render() {
+    return (
+      <div className="home">
+        <div className="title">Welcome, "code for name here"</div>
+        <div className="container">
+          {this.state.home.map((data) => (
+            <Tiles key={data.id} url={data.url} name={data.name} />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Home;

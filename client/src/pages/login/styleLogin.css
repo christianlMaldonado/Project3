@@ -1,21 +1,46 @@
-.loginPage {
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(80, 108, 131);
-  padding-top: 25vh;
+.MuiAvatar-root {
+  background-color: rgb(119, 147, 172) !important;
 }
 
-.loginBox {
-  background-color: rgb(136, 172, 201);
-  width: 40%;
-  height: 50vh;
-  margin-left: 30%;
-  padding-top: 5vh;
+.submitLogin {
+  background-color: rgb(119, 147, 172) !important;
+  color: white !important;
 }
 
-.login {
-  background-color: white;
-  width: 90%;
-  margin-left: 5%;
-  height: 45vh;
+input[type="text"]:not(.browser-default):focus:not([read-only]) {
+  border-bottom: 2px solid rgb(119, 147, 172) !important;
+  box-shadow: none !important;
+}
+
+input[type="text"]:not(.browser-default) {
+  border-color: lightgray !important;
+}
+
+input[type="password"]:not(.browser-default):focus:not([read-only]) {
+  border-bottom: 2px solid rgb(119, 147, 172) !important;
+  box-shadow: none !important;
+}
+
+input[type="password"]:not(.browser-default) {
+  border-color: lightgray !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: rgb(119, 147, 172) !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: none !important;
+}
+
+.MuiInput-underline {
+  border-bottom: none !important;
+}
+
+.MuiInput-underline:after {
+  border-bottom: none !important;
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: none !important;
 }

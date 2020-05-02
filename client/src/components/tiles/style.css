@@ -1,0 +1,31 @@
+.home-tile {
+  width: 40%;
+  margin-left: 7%;
+  margin-top: 2%;
+  margin-bottom: 20px;
+  background-color: rgb(80, 108, 131);
+  float: left;
+  color: white;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.home-tile:hover {
+  background-color: rgb(97, 130, 156);
+}
+
+.tile-container {
+  margin-top: 2%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: 200px;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+.header-tile {
+  font-size: 20px;
+}
