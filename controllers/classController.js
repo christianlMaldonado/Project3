@@ -23,10 +23,17 @@ module.exports = {
   addHomework: function (req, res) {
     User.updateMany(
       { isStudent: true },
-      { $set: { student: { grades: { assignment: req.body.assignment, grade: 0 } } } }
+      { $push: { "student.schoolWork": { assignment: { name: req.body.assignment, grade: 0 } } } }
     ).then(function (homework) {
       console.log(homework);
       res.json({ success: true, msg: homework + " added" });
+    });
+  },
+  getHomework: function (req, res) {
+    const studentName = req.body.student;
+    User.findOne({ username: studentName }, (err, student) => {
+      if (err) throw err;
+      res.json({ student });
     });
   },
   gradeAssignment: function (req, res) {
@@ -37,8 +44,15 @@ module.exports = {
     };
     User.findOneAndUpdate(
       { username: homework.username },
-      { $set: { student: { grades: { assignment: homework.assignment, grade: homework.grade } } } },
-      { $upsert: true },
+      {
+        $inc: {
+          "student.schoolWork.$[elem].grade": 90,
+        },
+      },
+      {
+        arrayFilters: [{ "elem.grade": { $eq: 0 } }],
+        multi: false,
+      },
       (err, student) => {
         if (err) throw err;
         if (!student) {
@@ -56,7 +70,7 @@ module.exports = {
     };
     User.findOneAndUpdate(
       { username: isPresent.username },
-      { $set: { attendance: { date: isPresent.date, present: isPresent.present } } },
+      { $push: { "student.attendance": { date: isPresent.date, present: isPresent.present } } },
       { $upsert: true },
       (err, student) => {
         if (err) throw err;

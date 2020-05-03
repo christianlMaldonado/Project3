@@ -2,9 +2,12 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const config = require("../config/database");
 
-const StudentSchema = mongoose.Schema({
-  attendance: [{ date: { type: Date, default: Date.now }, present: Boolean }],
-  grades: [{ assignment: String, grade: Number }],
+const HomeworkSchema = mongoose.Schema({
+  assignment: { name: String, grade: Number },
+});
+
+const AttendanceSchema = mongoose.Schema({
+  attendance: { date: { type: Date, default: Date.now }, present: Boolean },
 });
 
 const UserSchema = mongoose.Schema({
@@ -27,7 +30,10 @@ const UserSchema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  student: [StudentSchema],
+  student: {
+    schoolWork: [HomeworkSchema],
+    attendance: [AttendanceSchema],
+  },
 });
 
 const User = (module.exports = mongoose.model("User", UserSchema));
