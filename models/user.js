@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const config = require("../config/database");
 
 const StudentSchema = mongoose.Schema({
-  attendance: [{ date: Date, present: Boolean }],
+  attendance: [{ date: { type: Date, default: Date.now }, present: Boolean }],
   grades: [{ assignment: String, grade: Number }],
 });
 
@@ -36,8 +36,8 @@ module.exports.getUserById = function (id, callback) {
   User.findById(id, callback);
 };
 
-module.exports.getUserByUsername = function (username, callback) {
-  const query = { username: username };
+module.exports.getUserByUsername = function (email, callback) {
+  const query = { email: email };
   User.findOne(query, callback);
 };
 
