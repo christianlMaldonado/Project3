@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 5001;
 mongoose.connect(process.env.MONGODB_URI || config.database, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false,
 });
 
 mongoose.connection.on("connected", () => {
@@ -47,7 +48,6 @@ app.listen(PORT, () => {
   console.log("server on http://localhost:" + PORT);
 });
 
-
 // const path = require("path");
 // const http = require("http");
 // const express = require("express");
@@ -73,7 +73,7 @@ app.listen(PORT, () => {
 // io.on ("connection", socket=> {
 //     socket.on ("joinRoom", ({username, room}) => {
 //         const user = userJoin(socket.id, username, room);
-        
+
 //         socket.join(user.room);
 
 //         // Welcome current user
@@ -110,7 +110,7 @@ app.listen(PORT, () => {
 //                 "message",
 //                 formatMessage(botName, "${user.username) has left the chat")
 //             );
-            
+
 //             //Send users and room info
 //             io.to(user.room).emit("roomUsers", {
 //                 room: user.room,

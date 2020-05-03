@@ -7,11 +7,11 @@ export default {
   addHomework: function(homework) {
     return axios.post("/classroom/homework", homework);
   },
-  assignHomework: function() {
-    return axios.get("/classroom/homework");
+  getHomework: function(student) {
+    return axios.get("/classroom/homework", student);
   },
-  gradeAssignment: function(student, homework) {
-    return axios.put("/classroom/" + homework + "/" + student);
+  gradeAssignment: function(homework) {
+    return axios.put("/classroom/homework", homework);
   },
   takeAttendance: function(student) {
     return axios.put("classroom/attendance", student);
