@@ -23,6 +23,6 @@ export default {
     return axios.post("/users/auth", user);
   },
   userPortal: function() {
-    return axios.get("/user/profile");
+    return axios.get("/users/profile");
   },
 };
