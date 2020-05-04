@@ -5,11 +5,10 @@ import Chat from "../../components/chat/index";
 function Virtual() {
   return (
     <>
-      <div className="title">Virtual Classroom</div>
-      <div className="container">
-        <div className="virtual">
-          <Chat />
-        </div>
+      <div className="title">Classroom</div>
+      <div className="virtual">
+        {" "}
+        <Chat />
       </div>
     </>
   );
