@@ -46,11 +46,11 @@ module.exports = {
       { username: homework.username },
       {
         $set: {
-          "student.schoolWork.$[elem].grade": 90,
+          "student.schoolWork.$[elem].grade": homework.grade,
         },
       },
       {
-        arrayFilters: [{ "elem.grade": 0 }],
+        arrayFilters: [{ "elem.grade": { $lte: homework.grade } }],
         multi: false,
         $upsert: true,
       },
