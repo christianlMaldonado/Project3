@@ -22,7 +22,9 @@ export default {
   login: function(user) {
     return axios.post("/users/auth", user);
   },
-  userPortal: function() {
-    return axios.get("/users/profile");
+  userPortal: function(token) {
+    return axios.get("/users/profile", {
+      headers: { Authorization: "Bearer " + token, "Content-type": "application/json" },
+    });
   },
 };

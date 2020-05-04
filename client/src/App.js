@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Authenticated from "./components/Authenicated";
 import Navbar from "./components/navbar/navbar";
 import Home from "./pages/home/home";
 import Grades from "./pages/grades/grades";
@@ -47,7 +43,9 @@ function App() {
           <Switch>
             <Route exact path="/" component={LoginContainer} />
             <Route exact path="/register" component={Register} />
-            <Route component={Default} />
+            <Authenticated>
+              <Route component={Default} />
+            </Authenticated>
             {/* <Route component={NoMatch} /> */}
           </Switch>
         </div>

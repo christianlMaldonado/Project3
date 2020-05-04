@@ -31,9 +31,11 @@ class SignIn extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     API.login({ email: this.state.email, password: this.state.password }).then((response) => {
-      console.log(response);
-      localStorage.setItem("id_token", response.data.token);
-      localStorage.setItem("user", JSON.stringify(response.data.user));
+      let tokenArr = response.data.token.split(" ");
+      const token = tokenArr.pop().toString();
+      localStorage.setItem("id_token", token);
+      this.props.history.push("/home");
+      // localStorage.setItem("user", JSON.stringify(response.data.user));
     });
   };
 
