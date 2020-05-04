@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 
 class Assignments extends Component {
+  
   render() {
     return (
       <>
