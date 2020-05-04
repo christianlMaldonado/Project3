@@ -30,11 +30,11 @@ class SignIn extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    API.login({ email: this.state.email, password: this.state.password }).then(
-      (response) => {
-        console.log(response.message);
-      }
-    );
+    API.login({ email: this.state.email, password: this.state.password }).then((response) => {
+      console.log(response);
+      localStorage.setItem("id_token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+    });
   };
 
   render() {
