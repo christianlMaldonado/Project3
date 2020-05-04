@@ -1,15 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css";
 
-function Attendance() {
-  return (
-    <>
-      <div className="title">Attendance</div>
-      <div className="container">
-        <div className="attendance"></div>
-      </div>
-    </>
-  );
+class Attendance extends Component {
+  
+  render() {
+    return (
+      <>
+        <div className="title">Attendance</div>
+        <div className="container">
+          <div className="attendance"></div>
+        </div>
+      </>
+    );
+  }
 }
 
 export default Attendance;
