@@ -14,6 +14,7 @@ import Virtual from "./pages/virtual/virtual";
 import Create from "./pages/create/create";
 import Login from "./pages/login/login";
 import studentHome from "./pages/stuHome/Home";
+import Register from "./pages/register/register";
 import "./App.css";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/" component={LoginContainer} />
+            <Route exact path="/register" component={Register} />
             <Route component={Default} />
             {/* <Route component={NoMatch} /> */}
           </Switch>
