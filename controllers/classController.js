@@ -45,20 +45,31 @@ module.exports = {
     User.findOneAndUpdate(
       { username: homework.username },
       {
-        $inc: {
+        $set: {
           "student.schoolWork.$[elem].grade": 90,
         },
       },
       {
-        arrayFilters: [{ "elem.grade": { $eq: 0 } }],
+        arrayFilters: [{ "elem.grade": 0 }],
         multi: false,
+        $upsert: true,
       },
       (err, student) => {
         if (err) throw err;
         if (!student) {
           return res.json({ success: false, msg: "Student not found" });
+        } else {
+          console.log(student.student.schoolWork);
+          student.student.schoolWork.forEach((element) => {
+            if (element.assignment.name === homework.assignment) {
+              element.assignment.grade = homework.grade;
+            }
+            console.log(student.student.schoolWork);
+          });
+          student.save(function (err, student) {
+            res.json(student);
+          });
         }
-        res.json(student);
       }
     );
   },
