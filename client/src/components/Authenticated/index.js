@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import getJwt from "../../helpers/jwt";
 import API from "../../utilities/API";
 
-class Authenicated extends Component {
+class Authenticated extends Component {
   constructor(props) {
     super(props);
     this.state = {
       user: undefined,
     };
   }
-  componentDidMount() {
+  componentDidMount(props) {
     const jwt = getJwt();
     if (!jwt) {
       this.props.history.push("/");
@@ -39,4 +39,4 @@ class Authenicated extends Component {
   }
 }
 
-export default Authenicated;
+export default Authenticated;
