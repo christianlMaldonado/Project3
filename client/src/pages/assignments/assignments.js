@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
+import Tables from "../../components/tables/tables";
 
 class Assignments extends Component {
   render() {
@@ -7,7 +8,9 @@ class Assignments extends Component {
       <>
         <div className="title">Assignments</div>
         <div className="container">
-          <div className="assignments"></div>
+          <div className="assignments">
+            <Tables />
+          </div>
         </div>
       </>
     );

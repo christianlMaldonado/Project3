@@ -1,11 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
+import Body from "./tablebody";
+import Cell from "./cell";
+import Container from "./container";
+import Header from "./header";
+import Row from "./row";
 import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles({
@@ -26,41 +26,41 @@ const rows = [
   createData("Jay Coulee", 356, 16.0, 49),
 ];
 
-export default function DenseTable() {
+export default function Tables() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <Container component={Paper}>
       <Table className={classes.table} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>
+        <Header>
+          <Row>
+            <Cell>
               <b>Student Name</b>
-            </TableCell>
-            <TableCell align="right">
+            </Cell>
+            <Cell align="right">
               <b>Total</b>
-            </TableCell>
-            <TableCell align="right">
+            </Cell>
+            <Cell align="right">
               <b>Assignments</b>
-            </TableCell>
-            <TableCell align="right">
+            </Cell>
+            <Cell align="right">
               <b>Tests</b>
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
+            </Cell>
+          </Row>
+        </Header>
+        <Body>
           {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
+            <Row key={row.name}>
+              <Cell component="th" scope="row">
                 {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-            </TableRow>
+              </Cell>
+              <Cell align="right">{row.calories}</Cell>
+              <Cell align="right">{row.fat}</Cell>
+              <Cell align="right">{row.carbs}</Cell>
+            </Row>
           ))}
-        </TableBody>
+        </Body>
       </Table>
-    </TableContainer>
+    </Container>
   );
 }
