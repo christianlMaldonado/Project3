@@ -35,7 +35,6 @@ class SignIn extends Component {
       const token = tokenArr.pop().toString();
       localStorage.setItem("id_token", token);
       this.props.history.push("/home");
-      // localStorage.setItem("user", JSON.stringify(response.data.user));
     });
   };
 

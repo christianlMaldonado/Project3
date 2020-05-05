@@ -34,9 +34,10 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       isStudent: false,
-      name: this.state.firstName + " " + this.state.lastName,
+      username: this.state.firstName + " " + this.state.lastName,
     }).then((response) => {
       console.log(response.msg);
+      this.props.history.push("/");
     });
   };
 
