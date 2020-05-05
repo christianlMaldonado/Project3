@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { auth } from "../../services/firebase";
+// import { auth } from "../../services/firebase";
 import { db } from "../../services/firebase";
 import "./style.css";
 
@@ -89,17 +89,12 @@ export default class Chat extends Component {
             return (
               <p
                 key={chat.timestamp}
-                className={
-                  "chat-bubble " +
-                  (this.state.user === chat.uid ? "current-user" : "")
-                }
+                className={"chat-bubble " + (this.state.user === chat.uid ? "current-user" : "")}
               >
                 {chat.uid} {" : "}
                 {chat.content}
                 <br />
-                <span className="chat-time float-right">
-                  {this.formatTime(chat.timestamp)}
-                </span>
+                <span className="chat-time float-right">{this.formatTime(chat.timestamp)}</span>
               </p>
             );
           })}
@@ -111,13 +106,8 @@ export default class Chat extends Component {
             onChange={this.handleChange}
             value={this.state.content}
           ></textarea>
-          {this.state.error ? (
-            <p className="text-danger">{this.state.error}</p>
-          ) : null}
-          <button
-            type="submit"
-            className="btn btn-submit px-5 mt-4 chat-submit"
-          >
+          {this.state.error ? <p className="text-danger">{this.state.error}</p> : null}
+          <button type="submit" className="btn btn-submit px-5 mt-4 chat-submit">
             Send
           </button>
         </form>
