@@ -30,6 +30,10 @@ class Grades extends Component {
       });
   }
 
+  getAssignments = () => {
+    API.getHomework();
+  };
+
   render() {
     if (this.state.user !== undefined) {
       return (
@@ -46,6 +50,9 @@ class Grades extends Component {
                           <b>Assignment</b>
                         </Cell>
                         <Cell align="right">
+                          <b>Link</b>
+                        </Cell>
+                        <Cell align="right">
                           <b>Grade</b>
                         </Cell>
                       </Row>
@@ -55,10 +62,13 @@ class Grades extends Component {
                       {this.state.user.isStudent ? (
                         this.state.user.student.schoolWork.map((homework) => (
                           <Row key={homework.assignment._id}>
-                            <Cell align="right">
+                            <Cell key={homework.assignment.name}>
                               <b>{homework.assignment.name}</b>
                             </Cell>
-                            <Cell align="right">
+                            <Cell align="right" key={homework.assignment.link}>
+                              <b>{homework.assignment.link}</b>
+                            </Cell>
+                            <Cell align="right" key={homework.assignment.grade}>
                               <b>{homework.assignment.grade}</b>
                             </Cell>
                           </Row>
