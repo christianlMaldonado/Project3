@@ -7,7 +7,7 @@ const HomeworkSchema = mongoose.Schema({
 });
 
 const AttendanceSchema = mongoose.Schema({
-  attendance: { date: { type: Date, default: Date.now }, present: Boolean },
+  attendance: { isPresent: Boolean, date: { type: Date, default: Date.now } },
 });
 
 const UserSchema = mongoose.Schema({

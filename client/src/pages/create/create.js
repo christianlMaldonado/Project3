@@ -25,7 +25,6 @@ class Create extends Component {
         });
       })
       .catch((err) => {
-        // localStorage.removeItem("id_token");
         this.props.history.push("/");
       });
   }

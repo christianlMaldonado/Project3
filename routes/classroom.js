@@ -13,7 +13,7 @@ router
   .put(controller.gradeAssignment);
 
 // attendence route
-router.route("/attendance").put(controller.attendance);
+router.route("/attendance").get(controller.checkAttendance).put(controller.attendance);
 
 // router.route("");
 
