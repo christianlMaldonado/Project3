@@ -8,7 +8,7 @@ module.exports = {
       email: req.body.email,
       username: req.body.username,
       password: req.body.password,
-      isStudent: req.body.isStudent,
+      isStudent: true,
       student: [],
     });
 
@@ -23,7 +23,18 @@ module.exports = {
   addHomework: function (req, res) {
     User.updateMany(
       { isStudent: true },
-      { $push: { "student.schoolWork": { assignment: { name: req.body.assignment, grade: 0 } } } }
+      {
+        $push: {
+          "student.schoolWork": {
+            assignment: {
+              name: req.body.assignment,
+              grade: 0,
+              link: "",
+              description: req.body.description,
+            },
+          },
+        },
+      }
     ).then(function (homework) {
       console.log(homework);
       res.json({ success: true, msg: homework + " added" });
@@ -75,14 +86,13 @@ module.exports = {
   },
   attendance: function (req, res) {
     const isPresent = {
-      username: req.body.student,
-      date: Date.now(),
-      present: req.body.present,
+      username: req.body.name,
+      present: true,
     };
+    // console.log(req.body.date);
     User.findOneAndUpdate(
       { username: isPresent.username },
-      { $push: { "student.attendance": { date: isPresent.date, present: isPresent.present } } },
-      { $upsert: true },
+      { $push: { "student.attendance": { isPresent: isPresent.present } } },
       (err, student) => {
         if (err) throw err;
         if (!student) {
@@ -91,5 +101,8 @@ module.exports = {
         res.json({ success: true, msg: "Attendance taken" });
       }
     );
+  },
+  checkAttendance: function (req, res) {
+    User.find({ isStudent: true });
   },
 };

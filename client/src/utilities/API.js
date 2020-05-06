@@ -13,7 +13,10 @@ export default {
   gradeAssignment: function(homework) {
     return axios.put("/classroom/homework", homework);
   },
-  takeAttendance: function(student) {
+  takeAttendance: function() {
+    return axios.get("classroom/attendance");
+  },
+  checkIn: function(student) {
     return axios.put("classroom/attendance", student);
   },
   registerTeacher: function(teacher) {

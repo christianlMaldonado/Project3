@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Container, TBody, Row, Header, Cell } from "../../components/tables/index";
-import Table from "@material-ui/core/Table";
+import { Container, Tbl, TBody, Row, Header, Cell } from "../../components/tables/index";
+import Paper from "@material-ui/core/Paper";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
 
@@ -30,6 +30,10 @@ class Grades extends Component {
       });
   }
 
+  getAssignments = () => {
+    API.getHomework();
+  };
+
   render() {
     if (this.state.user !== undefined) {
       return (
@@ -38,15 +42,18 @@ class Grades extends Component {
           <div className="container">
             <div className="grades">
               <div className="table-container">
-                <Container>
-                  <Table>
+                <Container component={Paper}>
+                  <Tbl>
                     <Header>
                       <Row>
                         <Cell>
-                          <p>Assignment</p>
+                          <b>Assignment</b>
                         </Cell>
-                        <Cell>
-                          <p>Grade</p>
+                        <Cell align="right">
+                          <b>Link</b>
+                        </Cell>
+                        <Cell align="right">
+                          <b>Grade</b>
                         </Cell>
                       </Row>
                     </Header>
@@ -55,19 +62,26 @@ class Grades extends Component {
                       {this.state.user.isStudent ? (
                         this.state.user.student.schoolWork.map((homework) => (
                           <Row key={homework.assignment._id}>
-                            <Cell>{homework.assignment.name}</Cell>
-                            <Cell>{homework.assignment.grade}</Cell>
+                            <Cell key={homework.assignment.name}>
+                              <b>{homework.assignment.name}</b>
+                            </Cell>
+                            <Cell align="right" key={homework.assignment.link}>
+                              <b>{homework.assignment.link}</b>
+                            </Cell>
+                            <Cell align="right" key={homework.assignment.grade}>
+                              <b>{homework.assignment.grade}</b>
+                            </Cell>
                           </Row>
                         ))
                       ) : (
                         <Row>
-                          <Cell>
-                            <p>No Assingments</p>
+                          <Cell align="right">
+                            <b>No Assignments</b>
                           </Cell>
                         </Row>
                       )}
                     </TBody>
-                  </Table>
+                  </Tbl>
                 </Container>
               </div>
             </div>
