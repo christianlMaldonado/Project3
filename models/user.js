@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const config = require("../config/database");
 
 const HomeworkSchema = mongoose.Schema({
-  assignment: { name: String, grade: Number },
+  assignment: { name: String, grade: Number, link: String, description: String },
 });
 
 const AttendanceSchema = mongoose.Schema({

@@ -23,7 +23,18 @@ module.exports = {
   addHomework: function (req, res) {
     User.updateMany(
       { isStudent: true },
-      { $push: { "student.schoolWork": { assignment: { name: req.body.assignment, grade: 0 } } } }
+      {
+        $push: {
+          "student.schoolWork": {
+            assignment: {
+              name: req.body.assignment,
+              grade: 0,
+              link: "",
+              description: req.body.description,
+            },
+          },
+        },
+      }
     ).then(function (homework) {
       console.log(homework);
       res.json({ success: true, msg: homework + " added" });
