@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import getJwt from "../../helpers/jwt";
 import API from "../../utilities/API";
 
@@ -9,7 +10,7 @@ class Authenticated extends Component {
       user: undefined,
     };
   }
-  componentDidMount(props) {
+  componentDidMount() {
     const jwt = getJwt();
     if (!jwt) {
       this.props.history.push("/");
@@ -21,6 +22,7 @@ class Authenticated extends Component {
         })
       )
       .catch((err) => {
+        console.log(err);
         localStorage.removeItem("id_token");
         this.props.history.push("/");
       });
@@ -39,4 +41,4 @@ class Authenticated extends Component {
   }
 }
 
-export default Authenticated;
+export default withRouter(Authenticated);

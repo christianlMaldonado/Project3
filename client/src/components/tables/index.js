@@ -6,17 +6,17 @@ import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 
 export function Container(props) {
-  return <TableContainer {...props} />;
+  return <TableContainer {...props}>{props.children}</TableContainer>;
 }
-export function Body(props) {
-  return <TableBody {...props} />;
+export function TBody(props) {
+  return <TableBody {...props}>{props.children}</TableBody>;
 }
 export function Row(props) {
-  return <TableRow {...props} />;
+  return <TableRow {...props}>{props.children}</TableRow>;
 }
 export function Header(props) {
-  return <TableHead {...props} />;
+  return <TableHead {...props}>{props.children}</TableHead>;
 }
 export function Cell(props) {
-  return <TableCell {...props} />;
+  return <TableCell {...props}>{props.children}</TableCell>;
 }
