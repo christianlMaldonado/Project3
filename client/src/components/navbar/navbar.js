@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import logout from "../../helpers/logout";
 
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
@@ -41,7 +42,7 @@ function Navbar() {
         </a>
       </ul>
       <ul className="logout">
-        <a href="/" onclick="logout()">
+        <a href="/" onClick={logout}>
           <li>
             <i className="fa fa-sign-out" data-hover="Assignments">
               {isShown && "  Sign Out"}
