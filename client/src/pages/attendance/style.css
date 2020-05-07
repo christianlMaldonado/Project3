@@ -25,10 +25,12 @@
 .take-attendance:hover {
   background-color: rgb(161, 186, 209);
   border: 2px rgb(161, 186, 209) solid;
+  cursor: pointer;
 }
 
 button:focus {
-  background-color: rgba(117, 143, 165) !important;
+  background-color: rgb(161, 186, 209) !important;
+  border: 2px rgb(161, 186, 209) !important;
 }
 
 @media only screen and (max-width: 600px) {

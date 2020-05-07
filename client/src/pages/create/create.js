@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import "./style.css";
+import "./style-create.css";
 import { Form, Input, Text, Btn } from "../../components/Form";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
+import Loading from "../../components/loading/loading";
 
 class Create extends Component {
   constructor(props) {
@@ -74,12 +75,13 @@ class Create extends Component {
     if (this.state.user !== undefined) {
       return !this.state.user.isStudent ? (
         <>
-          <div className="title">Create an Assignment</div>
+          <div className="title">Create</div>
           <div className="container">
             <div className="create">
-              <h1>Add Assignments</h1>
+              <div className="create-title">Add an Assignment</div>
               <Form>
                 <Input
+                  className="create-input"
                   value={this.state.assignment}
                   onChange={this.handleInputChange}
                   name="assignment"
@@ -94,43 +96,53 @@ class Create extends Component {
                 <Btn
                   disabled={!this.state.assignment || !this.state.description}
                   onClick={this.handleFormSubmit}
+                  className="create-button"
                 >
                   Create Assignment
                 </Btn>
               </Form>
 
-              <h1>Add Students</h1>
+              <div className="create-title-students">Add Students</div>
 
               <Form>
                 <Input
+                  className="create-input"
                   value={this.state.firstName}
                   onChange={this.handleInputChange}
                   name="firstName"
-                  placeholder="first name"
+                  placeholder="First Name"
                 />
                 <Input
+                  className="create-input"
                   value={this.state.lastName}
                   onChange={this.handleInputChange}
                   name="lastName"
-                  placeholder="last name"
+                  placeholder="Last Name"
                 />
                 <Input
+                  className="create-input"
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   name="email"
-                  placeholder="email"
+                  placeholder="Student-Email"
                   type="email"
                 />
                 <Input
+                  className="create-input"
                   value={this.state.password}
                   onChange={this.handleInputChange}
                   name="password"
-                  placeholder="password"
+                  placeholder="Password"
                   type="password"
                 />
                 <Btn
-                  disabled={!this.state.firstName || !this.state.lastName || !this.state.password}
+                  disabled={
+                    !this.state.firstName ||
+                    !this.state.lastName ||
+                    !this.state.password
+                  }
                   onClick={this.addStudent}
+                  className="create-button"
                 >
                   Add Student
                 </Btn>
@@ -141,11 +153,13 @@ class Create extends Component {
       ) : (
         <>
           <div className="title">Create an Assignment</div>
-          <h3>Sorry {this.state.user.name}, you don't have access to this page</h3>
+          <h3>
+            Sorry {this.state.user.name}, you don't have access to this page
+          </h3>
         </>
       );
     } else {
-      return <h1>Loading...</h1>;
+      return <Loading />;
     }
   }
 }

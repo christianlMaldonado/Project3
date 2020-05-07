@@ -30,7 +30,10 @@ export default {
   },
   userPortal: function(token) {
     return axios.get("/users/profile", {
-      headers: { Authorization: `Bearer ${token}`, "Content-type": "application/json" },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-type": "application/json",
+      },
     });
   },
 };

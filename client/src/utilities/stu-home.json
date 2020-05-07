@@ -2,7 +2,8 @@
   {
     "id": 1,
     "name": "Grades",
-    "url": "/grades"
+    "url": "/grades",
+    "image-url": ""
   },
   {
     "id": 2,
@@ -16,7 +17,7 @@
   },
   {
     "id": 4,
-    "name": "Create An Assignment",
+    "name": "Create",
     "url": "/create"
   }
 ]

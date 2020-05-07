@@ -4,7 +4,7 @@ import Chat from "../../components/chat/index";
 import WebRTC from "../../components/WebRTC/WebRTC";
 
 function Virtual() {
-  WebRTC();
+  // WebRTC();
   return (
     <>
       <div className="title">Classroom</div>
