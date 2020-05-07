@@ -43,9 +43,11 @@ if (process.env.NODE_ENV === "production") {
 app.get("/", (req, res) => {
   res.send("invalid endpoint");
 });
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 app.listen(PORT, () => {
   console.log("server on http://localhost:" + PORT);
 });
