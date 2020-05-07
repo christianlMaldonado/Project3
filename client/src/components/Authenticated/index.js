@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import getJwt from "../../helpers/jwt";
 import API from "../../utilities/API";
+import "./style.css";
 
 class Authenticated extends Component {
   constructor(props) {
@@ -32,7 +33,9 @@ class Authenticated extends Component {
     if (this.state.user === undefined) {
       return (
         <div>
-          <h1>Loading ...</h1>
+          <div className="load-screen">
+            <h1>Loading</h1>
+          </div>
         </div>
       );
     }

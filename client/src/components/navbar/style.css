@@ -1,6 +1,6 @@
 .nav {
   left: 0;
-  height: 105%;
+  height: 101% !important;
   width: 80px !important;
   background-color: rgb(149, 184, 212);
   position: fixed;
@@ -62,4 +62,10 @@ li:hover {
   .nav {
     display: none;
   }
+}
+
+.logout {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }

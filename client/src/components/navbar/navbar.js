@@ -40,6 +40,15 @@ function Navbar() {
           </li>
         </a>
       </ul>
+      <ul className="logout">
+        <a href="/" onclick="logout()">
+          <li>
+            <i className="fa fa-sign-out" data-hover="Assignments">
+              {isShown && "  Sign Out"}
+            </i>
+          </li>
+        </a>
+      </ul>
     </div>
   );
 }
