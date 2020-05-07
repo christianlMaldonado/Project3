@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import Tiles from "../../components/tiles";
-import home from "../../home.json";
+import home from "../../utilities/stu-home.json";
 
 class studentHome extends Component {
   state = { home };

@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Container, Tbl, TBody, Row, Header, Cell } from "../../components/tables/index";
+import {
+  Container,
+  Tbl,
+  TBody,
+  Row,
+  Header,
+  Cell,
+} from "../../components/tables/index";
 import Paper from "@material-ui/core/Paper";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
+import Loading from "../../components/loading/loading";
 
 class Grades extends Component {
   constructor(props) {
@@ -89,7 +97,7 @@ class Grades extends Component {
         </>
       );
     } else {
-      return <h1>state not loading</h1>;
+      return <Loading />;
     }
   }
 }

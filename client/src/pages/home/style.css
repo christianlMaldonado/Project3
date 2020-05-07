@@ -12,6 +12,8 @@
   background-color: rgb(106, 140, 168);
   position: fixed;
   width: 100%;
+  text-transform: uppercase;
+  z-index: 3;
 }
 
 .container {
