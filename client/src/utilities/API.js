@@ -13,6 +13,9 @@ export default {
   gradeAssignment: function(homework) {
     return axios.put("/classroom/homework", homework);
   },
+  submitHomework: function(homework) {
+    return axios.post("/classroom/submitHomework", homework);
+  },
   takeAttendance: function() {
     return axios.get("classroom/attendance");
   },
