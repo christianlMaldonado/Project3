@@ -23,8 +23,6 @@ class Authenticated extends Component {
         })
       )
       .catch((err) => {
-        console.log(err);
-        localStorage.removeItem("id_token");
         this.props.history.push("/");
       });
   }
