@@ -31,7 +31,7 @@ textarea {
   background-color: rgb(255, 255, 255);
   width: 85%;
   max-height: 200px;
-  height: 200px;
+  height: 100px;
   overflow: auto;
   margin-bottom: 20px;
 }

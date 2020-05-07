@@ -1,0 +1,10 @@
+audio,
+video {
+  display: inline-block;
+  margin-left: 25%;
+  background-color: black;
+  margin-top: 100px;
+  width: 50%;
+  height: 35vh;
+  margin-bottom: 10%;
+}

@@ -7,5 +7,29 @@
   width: 100%;
 }
 
+.take-attendance {
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  background-color: rgb(117, 143, 165);
+  border: 2px rgb(117, 143, 165) solid;
+  color: white;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.take-attendance:hover {
+  background-color: rgb(161, 186, 209);
+  border: 2px rgb(161, 186, 209) solid;
+}
+
+button:focus {
+  background-color: rgba(117, 143, 165) !important;
+}
+
 @media only screen and (max-width: 600px) {
 }
