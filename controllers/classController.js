@@ -70,12 +70,10 @@ module.exports = {
         if (!student) {
           return res.json({ success: false, msg: "Student not found" });
         } else {
-          console.log(student.student.schoolWork);
           student.student.schoolWork.forEach((element) => {
             if (element.assignment.name === homework.assignment) {
               element.assignment.grade = homework.grade;
             }
-            console.log(student.student.schoolWork);
           });
           student.save(function (err, student) {
             res.json(student);
@@ -105,8 +103,14 @@ module.exports = {
   checkAttendance: function (req, res) {
     User.find({ isStudent: true }, (err, students) => {
       if (err) throw err;
-      console.log(students);
       res.json(students);
+    });
+  },
+  submitLink: function (req, res) {
+    User.findByIdAndUpdate({ _id: req.params.id }, (err, doc) => {
+      if (err) throw err;
+      console.log(doc);
+      res.json({ success: true });
     });
   },
 };
