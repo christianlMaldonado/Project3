@@ -1,10 +1,19 @@
 audio,
 video {
   display: inline-block;
-  margin-left: 25%;
+  margin-left: 30vw;
   background-color: black;
   margin-top: 100px;
-  width: 50%;
+  width: 40vw;
   height: 35vh;
-  margin-bottom: 10%;
+  margin-bottom: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  audio,
+  video {
+    width: 60vw;
+    margin-left: 23vw;
+    margin-top: 80px;
+  }
 }

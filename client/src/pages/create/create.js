@@ -78,7 +78,7 @@ class Create extends Component {
           <div className="title">Create</div>
           <div className="container">
             <div className="create">
-              <div className="create-title">Add an Assignment</div>
+              <div className="create-title">Create a New Assignment</div>
               <Form>
                 <Input
                   className="create-input"
@@ -101,10 +101,12 @@ class Create extends Component {
                   Create Assignment
                 </Btn>
               </Form>
+            </div>
 
-              <div className="create-title-students">Add Students</div>
+            <div className="create">
+              <div className="create-title">Create a Student Account</div>
 
-              <Form>
+              <Form autocomplete="off">
                 <Input
                   className="create-input"
                   value={this.state.firstName}
@@ -126,6 +128,7 @@ class Create extends Component {
                   name="email"
                   placeholder="Student-Email"
                   type="email"
+                  autocomplete="off"
                 />
                 <Input
                   className="create-input"
@@ -134,6 +137,7 @@ class Create extends Component {
                   name="password"
                   placeholder="Password"
                   type="password"
+                  autocomplete="off"
                 />
                 <Btn
                   disabled={

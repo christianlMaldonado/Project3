@@ -2,21 +2,12 @@
   background-color: rgb(226, 236, 245);
   margin-left: -7px;
   text-align: center;
-  padding-top: 30px;
-  margin-top: -10px;
-  width: 100%;
+  margin-top: 30px;
+  width: 65vw;
+  margin-bottom: 30px;
 }
 
 .create-title {
-  width: 100%;
-  background-color: rgb(110, 141, 165);
-  color: white;
-  font-size: 30px;
-  padding: 10px;
-  margin-bottom: 50px;
-}
-
-.create-title-students {
   width: 100%;
   background-color: rgb(110, 141, 165);
   color: white;
@@ -67,10 +58,21 @@ textarea {
   padding: 2px !important;
   background-color: white;
   resize: none;
+  border: 1px lightgray solid !important;
 }
 
 @media only screen and (max-width: 600px) {
   .create {
-    margin-left: -15px;
+    margin-top: 0px;
+    width: 89vw;
+    margin-left: -15vw;
+  }
+
+  .form-container {
+    width: 80vw;
+  }
+
+  .create-title {
+    font-size: 20px;
   }
 }
