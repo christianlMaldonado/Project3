@@ -26,7 +26,6 @@ class Assignments extends Component {
         this.setState({
           user: res.data.user,
         });
-        console.log(this.state.user);
       })
       .catch((err) => {
         // localStorage.removeItem("id_token");
@@ -42,11 +41,15 @@ class Assignments extends Component {
   };
 
   handleSubmit = (id) => {
-    console.log(this.state.link);
     const homeworkLink = {
+      id,
       link: this.state.link,
+      user: this.state.user,
     };
-    API.submitHomework(id, homeworkLink).then((res) => console.log(res));
+    API.submitHomework(homeworkLink).then((res) => {
+      console.log(res);
+      this.setState({ link: null });
+    });
   };
 
   render() {
@@ -80,7 +83,7 @@ class Assignments extends Component {
                             <Cell key={homework.assignment.name}>
                               <b>{homework.assignment.name}</b>
                             </Cell>
-                            <Cell>
+                            <Cell align="left">
                               <TextField
                                 onChange={this.handleInputChange}
                                 required
@@ -95,7 +98,7 @@ class Assignments extends Component {
                                 color="primary"
                                 className="submitLogin"
                               >
-                                Submit Link
+                                Link
                               </Button>
                             </Cell>
                             <Cell align="right" key={homework.assignment.description}>

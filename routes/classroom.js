@@ -12,7 +12,7 @@ router
   .post(controller.addHomework)
   .put(controller.gradeAssignment);
 
-router.route("/homework/:id").put(controller.submitLink);
+router.route("/submitHomework").post(controller.submitLink);
 
 // attendence route
 router.route("/attendance").get(controller.checkAttendance).put(controller.attendance);
