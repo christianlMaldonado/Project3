@@ -53,9 +53,8 @@
 
 @media only screen and (max-width: 600px) {
   .chat-container {
-    width: 60vw;
+    width: 85vw;
     text-align: center;
-    margin-left: 26vw;
   }
 
   .chat-submit {
@@ -64,8 +63,14 @@
     margin-right: 9vw;
   }
 
+  .chat-area {
+    text-align: left !important;
+    padding-left: 8px;
+  }
+
   .form-control {
-    margin-right: 9vw;
+    width: 84%;
+    margin-right: 54px;
   }
 
   .py-5 {
