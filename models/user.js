@@ -28,7 +28,7 @@ const UserSchema = mongoose.Schema({
   },
   isStudent: {
     type: Boolean,
-    default: true,
+    default: false,
   },
   student: {
     schoolWork: [HomeworkSchema],
