@@ -13,6 +13,9 @@ class Assignments extends Component {
     this.state = {
       user: undefined,
       link: "",
+      students: undefined,
+      grade: undefined,
+      message: "",
     };
   }
 
@@ -28,7 +31,6 @@ class Assignments extends Component {
         });
       })
       .catch((err) => {
-        // localStorage.removeItem("id_token");
         this.props.history.push("/");
       });
   }
@@ -48,7 +50,30 @@ class Assignments extends Component {
     };
     API.submitHomework(homeworkLink).then((res) => {
       console.log(res);
-      this.setState({ link: null });
+      this.setState({ link: null, message: "Homework Submitted" });
+    });
+  };
+
+  seeAssignments = () => {
+    API.takeAttendance().then((res) => {
+      this.setState({
+        students: res.data,
+      });
+    });
+  };
+
+  submitGrade = (student) => {
+    const homework = {
+      student: student.username,
+      assignment: student.assignment,
+      grade: this.state.grade,
+    };
+
+    API.gradeAssignment(homework).then((res) => {
+      this.setState({
+        grade: undefined,
+        message: "Grade Updated",
+      });
     });
   };
 
@@ -60,25 +85,25 @@ class Assignments extends Component {
           <div className="container">
             <div className="assignments">
               <div className="table-container">
-                <Container component={Paper}>
-                  <Tbl>
-                    <Header>
-                      <Row>
-                        <Cell>
-                          <b>Assignment</b>
-                        </Cell>
-                        <Cell align="right">
-                          <b>Submit Link</b>
-                        </Cell>
-                        <Cell align="right">
-                          <b>Description</b>
-                        </Cell>
-                      </Row>
-                    </Header>
+                {this.state.user.isStudent ? (
+                  <Container component={Paper}>
+                    <Tbl>
+                      <Header>
+                        <Row>
+                          <Cell>
+                            <b>Assignment</b>
+                          </Cell>
+                          <Cell align="left">
+                            <b>Link</b>
+                          </Cell>
+                          <Cell align="right">
+                            <b>Description</b>
+                          </Cell>
+                        </Row>
+                      </Header>
 
-                    <TBody>
-                      {this.state.user.isStudent ? (
-                        this.state.user.student.schoolWork.map((homework) => (
+                      <TBody>
+                        {this.state.user.student.schoolWork.map((homework) => (
                           <Row key={homework._id}>
                             <Cell key={homework.assignment.name}>
                               <b>{homework.assignment.name}</b>
@@ -105,17 +130,77 @@ class Assignments extends Component {
                               <b>{homework.assignment.description}</b>
                             </Cell>
                           </Row>
-                        ))
-                      ) : (
-                        <Row>
-                          <Cell align="right">
-                            <b>No Assignments</b>
-                          </Cell>
-                        </Row>
-                      )}
-                    </TBody>
-                  </Tbl>
-                </Container>
+                        ))}
+                      </TBody>
+                    </Tbl>
+                  </Container>
+                ) : (
+                  <>
+                    <Button variant="contained" color="primary" onClick={this.seeAssignments}>
+                      See Assignments
+                    </Button>
+                    <Container>
+                      <Tbl>
+                        <Header>
+                          <Row>
+                            <Cell>
+                              <b>Student</b>
+                            </Cell>
+                            <Cell>
+                              <b>Assignment</b>
+                            </Cell>
+                            <Cell>
+                              <b>Link</b>
+                            </Cell>
+                            <Cell>
+                              <b>Input Grade</b>
+                            </Cell>
+                          </Row>
+                        </Header>
+                        <TBody>
+                          {this.state.students ? (
+                            this.state.students.map((student) => {
+                              return student.student.schoolWork.map((assignment) => (
+                                <Row>
+                                  <Cell>
+                                    <b>{student.name}</b>
+                                  </Cell>
+                                  <Cell>
+                                    <b>{assignment.assignment.name}</b>
+                                  </Cell>
+                                  <Cell>
+                                    <b>{assignment.assignment.link}</b>
+                                  </Cell>
+                                  <Cell>
+                                    <TextField
+                                      lable="grade"
+                                      type="number"
+                                      name="grade"
+                                      onChange={this.handleInputChange}
+                                    />
+                                    <Button
+                                      variant="outlined"
+                                      onClick={() =>
+                                        this.submitGrade({
+                                          username: student.username,
+                                          assignment: assignment.assignment.name,
+                                        })
+                                      }
+                                    >
+                                      Submit Grade
+                                    </Button>
+                                  </Cell>
+                                </Row>
+                              ));
+                            })
+                          ) : (
+                            <Row></Row>
+                          )}
+                        </TBody>
+                      </Tbl>
+                    </Container>
+                  </>
+                )}
               </div>
             </div>
           </div>
