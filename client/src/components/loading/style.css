@@ -10,7 +10,7 @@
 
 .loading-screen:after {
   content: " .";
-  animation: dots 0.5s steps(5, end) infinite;
+  animation: dots 1s steps(5, end) infinite;
 }
 
 @keyframes dots {

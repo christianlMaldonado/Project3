@@ -3,21 +3,24 @@
     "id": 1,
     "name": "Grades",
     "url": "/grades",
-    "image-url": ""
+    "image": "grade.jpg"
   },
   {
     "id": 2,
     "name": "Assignments",
-    "url": "/assignments"
+    "url": "/assignments",
+    "image": "assignments.jpg"
   },
   {
     "id": 3,
     "name": "Virtual Classroom",
-    "url": "/virtual"
+    "url": "/virtual",
+    "image": "virtual.jpg"
   },
   {
     "id": 4,
-    "name": "Create",
-    "url": "/create"
+    "name": "Check-In",
+    "url": "/attendance",
+    "image": "calendar.jpg"
   }
 ]
