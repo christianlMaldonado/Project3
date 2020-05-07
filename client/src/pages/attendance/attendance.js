@@ -12,6 +12,7 @@ import {
 import Paper from "@material-ui/core/Paper";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
+import Loading from "../../components/loading/loading";
 
 class Attendance extends Component {
   constructor(props) {
@@ -131,7 +132,7 @@ class Attendance extends Component {
         </>
       );
     } else {
-      return <h1>Loading</h1>;
+      return <Loading />;
     }
   }
 }

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./style.css";
 import Tiles from "../../components/tiles";
-import home from "../../home.json";
+import home from "../../utilities/home.json";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
+import Loading from "../../components/loading/loading";
 
 class Home extends Component {
   constructor(props) {
@@ -34,13 +35,18 @@ class Home extends Component {
           <div className="title">Welcome, {this.state.user.name}</div>
           <div className="container">
             {this.state.home.map((data) => (
-              <Tiles key={data.id} url={data.url} name={data.name} />
+              <Tiles
+                key={data.id}
+                url={data.url}
+                name={data.name}
+                image={data.image}
+              />
             ))}
           </div>
         </div>
       );
     } else {
-      return <h1>Loading</h1>;
+      return <Loading />;
     }
   }
 }
