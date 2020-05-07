@@ -9,7 +9,6 @@ import Assignments from "./pages/assignments/assignments";
 import Virtual from "./pages/virtual/virtual";
 import Create from "./pages/create/create";
 import Login from "./pages/login/login";
-import studentHome from "./pages/stuHome/Home";
 import Register from "./pages/register/register";
 import "./App.css";
 
@@ -32,7 +31,6 @@ function App() {
       <Route exact path="/assignments" component={Assignments} />
       <Route exact path="/create" component={Create} />
       <Route exact path="/virtual" component={Virtual} />
-      <Route exact path="/student-home" component={studentHome} />
     </>
   );
 
