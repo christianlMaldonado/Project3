@@ -23,7 +23,6 @@ class Home extends Component {
         });
       })
       .catch((err) => {
-        // localStorage.removeItem("id_token");
         this.props.history.push("/");
       });
   }
@@ -34,13 +33,9 @@ class Home extends Component {
         <div className="home">
           <div className="title">Welcome, {this.state.user.name}</div>
           <div className="container">
+            {this.state.user.isStudent}
             {this.state.home.map((data) => (
-              <Tiles
-                key={data.id}
-                url={data.url}
-                name={data.name}
-                image={data.image}
-              />
+              <Tiles key={data.id} url={data.url} name={data.name} image={data.image} />
             ))}
           </div>
         </div>

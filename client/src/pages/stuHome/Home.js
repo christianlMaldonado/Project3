@@ -2,9 +2,29 @@ import React, { Component } from "react";
 import "./style.css";
 import Tiles from "../../components/tiles";
 import home from "../../utilities/stu-home.json";
+import API from "../../utilities/API";
+import getJwt from "../../helpers/jwt";
 
 class studentHome extends Component {
-  state = { home };
+  constructor(props) {
+    super(props);
+    this.state = { home, user: undefined, redirect: null };
+  }
+  componentDidMount() {
+    const jwt = getJwt();
+    if (!jwt) {
+      this.props.history.push("/");
+    }
+    API.userPortal(jwt)
+      .then((res) => {
+        this.setState({
+          user: res.data.user,
+        });
+      })
+      .catch((err) => {
+        this.props.history.push("/");
+      });
+  }
 
   render() {
     return (
