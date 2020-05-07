@@ -103,6 +103,10 @@ module.exports = {
     );
   },
   checkAttendance: function (req, res) {
-    User.find({ isStudent: true });
+    User.find({ isStudent: true }, (err, students) => {
+      if (err) throw err;
+      console.log(students);
+      res.json(students);
+    });
   },
 };

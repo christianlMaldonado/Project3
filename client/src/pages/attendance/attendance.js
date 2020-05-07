@@ -11,6 +11,8 @@ class Attendance extends Component {
     super(props);
     this.state = {
       user: undefined,
+      students: undefined,
+      checkedIn: undefined,
     };
   }
   componentDidMount() {
@@ -35,13 +37,17 @@ class Attendance extends Component {
     };
     API.checkIn(studentCheckIn).then((res) => {
       console.log(res);
-      return <h3>You are checked as present!</h3>;
+      this.setState({
+        checkedIn: true,
+      });
     });
   };
 
   takeAttendance = () => {
     API.takeAttendance().then((res) => {
-      console.log(res);
+      this.setState({
+        students: res.data,
+      });
     });
   };
 
@@ -54,7 +60,11 @@ class Attendance extends Component {
             <div className="attendance">
               <div className="table-container">
                 {this.state.user.isStudent ? (
-                  <button onClick={this.studentCheckIn}>Check In</button>
+                  !this.state.checkedIn ? (
+                    <button onClick={this.studentCheckIn}>Check In</button>
+                  ) : (
+                    <h3>You are checked in already!</h3>
+                  )
                 ) : (
                   <>
                     <button onClick={this.takeAttendance}>Take Attendance</button>
@@ -71,10 +81,28 @@ class Attendance extends Component {
                           </Row>
                         </Header>
                         <TBody>
-                          <Row>
-                            <Cell></Cell>
-                            <Cell></Cell>
-                          </Row>
+                          {this.state.students ? (
+                            this.state.students.map((student) => (
+                              <Row key={student._id}>
+                                <Cell key={student.username}>
+                                  <b>{student.username}</b>
+                                </Cell>
+                                <Cell key={student.name} align="right">
+                                  <b>
+                                    {student.student.attendance.map((present) => (
+                                      <p key={present._id}>{present.attendance.date}</p>
+                                    ))}
+                                  </b>
+                                </Cell>
+                              </Row>
+                            ))
+                          ) : (
+                            <Row>
+                              <Cell>
+                                <b>No Students To Check</b>
+                              </Cell>
+                            </Row>
+                          )}
                         </TBody>
                       </Tbl>
                     </Container>
