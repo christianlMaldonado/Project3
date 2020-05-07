@@ -8,6 +8,6 @@
 
 @media only screen and (max-width: 600px) {
   .virtual {
-    margin-left: -15px;
+    height: 101.6vh;
   }
 }

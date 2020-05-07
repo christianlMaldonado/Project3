@@ -1,11 +1,17 @@
 .assignments {
   background-color: rgb(226, 236, 245);
-  height: 200vh;
+  height: 100%;
   text-align: center;
   padding-top: 30px;
-  margin-top: -10px;
-  width: 100%;
+  margin-top: 10px;
+  width: 65vw;
+  padding-bottom: 10vh;
 }
 
 @media only screen and (max-width: 600px) {
+  .assignments {
+    margin-top: 0px;
+    width: 89vw;
+    margin-left: -15vw;
+  }
 }
