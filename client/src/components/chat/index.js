@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-// import { auth } from "../../services/firebase";
+import API from "../../utilities/API";
 import { db } from "../../services/firebase";
+import getJwt from "../../helpers/jwt";
 import "./style.css";
+import { withRouter } from "react-router-dom";
 
-export default class Chat extends Component {
+class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //user: auth().currentUser, >>>> This is original code
-      user: "Matt",
+      user: undefined,
       chats: [],
       content: "",
       readError: null,
@@ -21,7 +22,22 @@ export default class Chat extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ readError: null, loadingChats: true });
+    const jwt = getJwt();
+    if (!jwt) {
+      this.props.history.push("/");
+    }
+    API.userPortal(jwt)
+      .then((res) =>
+        this.setState({
+          user: res.data.user.username,
+          readError: null,
+          loadingChats: true,
+        })
+      )
+      .catch((err) => {
+        this.props.history.push("/");
+      });
+
     const chatArea = this.myRef.current;
     try {
       db.ref("chats").on("value", (snapshot) => {
@@ -118,3 +134,5 @@ export default class Chat extends Component {
     );
   }
 }
+
+export default withRouter(Chat);
