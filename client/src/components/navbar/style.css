@@ -1,6 +1,6 @@
 .nav {
   left: 0;
-  height: 101% !important;
+  height: 102% !important;
   width: 80px !important;
   background-color: rgb(149, 184, 212);
   position: fixed;
@@ -30,10 +30,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: white !important;
-}
-
 ul:not(.browser-default) > li {
   list-style-type: none;
 }
@@ -42,6 +38,7 @@ li {
   padding-top: 10px;
   padding-left: 30px;
   padding-bottom: 10px;
+  text-transform: uppercase;
 }
 
 li:hover {
