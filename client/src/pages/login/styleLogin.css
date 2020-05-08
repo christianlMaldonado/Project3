@@ -1,16 +1,11 @@
 .MuiAvatar-root {
   background-color: rgb(119, 147, 172) !important;
+  margin-left: 42% !important;
 }
 
 .submitLogin {
   background-color: rgb(119, 147, 172) !important;
   color: white !important;
-}
-
-.MuiAvatar-root {
-  margin-left: 45%;
-  margin-top: 25vh;
-  margin-bottom: 2%;
 }
 
 .MuiGrid-container {
@@ -22,19 +17,31 @@
   width: 40% !important;
   float: right;
   margin-right: 5vw !important;
+  font-family: "Raleway", sans-serif !important;
+}
+
+input {
+  font-family: "Raleway", sans-serif;
 }
 
 input[type="text"]:not(.browser-default):focus:not([read-only]) {
   border-bottom: 2px solid rgb(119, 147, 172) !important;
   box-shadow: none !important;
+  font-family: "Raleway", sans-serif;
 }
 
 input[type="text"]:not(.browser-default) {
   border-color: lightgray !important;
+  font-family: "Raleway", sans-serif;
+}
+
+button {
+  font-family: "Raleway", sans-serif !important;
 }
 
 .MuiFormLabel-root.Mui-focused {
   color: rgb(119, 147, 172) !important;
+  font-family: "Raleway", sans-serif;
 }
 
 .MuiInput-underline:before {
@@ -55,8 +62,8 @@ input[type="text"]:not(.browser-default) {
 
 .login-image {
   float: left;
-  width: 48vw;
-  height: 100vh !important;
+  width: 48.8vw;
+  height: 100% !important;
 }
 
 .MuiTypography-h5 {
@@ -66,6 +73,11 @@ input[type="text"]:not(.browser-default) {
 .formHead {
   color: rgb(119, 147, 172);
   font-size: 30px !important;
+  font-family: "Raleway", sans-serif !important;
+}
+
+.MuiTypography-colorPrimary {
+  color: rgb(119, 147, 172) !important;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -80,6 +92,6 @@ input[type="text"]:not(.browser-default) {
   }
 
   .MuiAvatar-root {
-    margin-left: 47% !important;
+    margin-left: 42% !important;
   }
 }
