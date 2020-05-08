@@ -2,23 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
-
-const Container = styled.div`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
+import "./style.css";
 
 const Row = styled.div`
   display: flex;
   width: 100%;
-`;
-
-const Video = styled.video`
-  border: 1px solid blue;
-  width: 50%;
-  height: 50%;
 `;
 
 function App() {
@@ -100,12 +88,12 @@ function App() {
 
   let UserVideo;
   if (stream) {
-    UserVideo = <Video playsInline muted ref={userVideo} autoPlay />;
+    UserVideo = <video id="uservideo" playsInline muted ref={userVideo} autoPlay />;
   }
 
   let PartnerVideo;
   if (callAccepted) {
-    PartnerVideo = <Video playsInline ref={partnerVideo} autoPlay />;
+    PartnerVideo = <video id="partnervideo" playsInline ref={partnerVideo} autoPlay />;
   }
 
   let incomingCall;
@@ -118,7 +106,7 @@ function App() {
     );
   }
   return (
-    <Container>
+    <div className="videoContainer">
       <Row>
         {UserVideo}
         {PartnerVideo}
@@ -136,7 +124,7 @@ function App() {
         })}
       </Row>
       <Row>{incomingCall}</Row>
-    </Container>
+    </div>
   );
 }
 

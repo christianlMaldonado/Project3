@@ -11,9 +11,9 @@ body {
   border: 0px solid rgb(27, 27, 139, 0) !important;
   width: 40vw !important;
   height: 40vh !important;
-  margin-top: 20vh !important;
+  /* margin-top: 20vh !important;
   margin-left: 30vw;
-  margin-bottom: 10vh;
+  margin-bottom: 10vh; */
 }
 
 .form {

@@ -1,0 +1,23 @@
+.videoContainer {
+  position: relative;
+  top: 10vh;
+  left: 15vw;
+  width: 80vw;
+  height: 60vh;
+}
+
+#uservideo {
+  border: 0px solid rgb(27, 27, 139, 0) !important;
+  width: 20vw !important;
+  height: 40vh !important;
+  position: absolute;
+  top: -5vh;
+  right: 0;
+  z-index: 20;
+}
+
+#partnervideo {
+  border: 0px solid rgb(27, 27, 139, 0) !important;
+  width: 60vw !important;
+  height: 40vh !important;
+}
