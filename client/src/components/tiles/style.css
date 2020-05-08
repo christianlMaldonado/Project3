@@ -49,10 +49,20 @@
   }
 }
 
+@media only screen and (max-width: 1025px) {
+  .home-tile {
+    width: 40vw;
+    margin-top: 2%;
+    margin-right: 1vw;
+    margin-bottom: 2vh;
+    text-align: center;
+    position: relative;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .home-tile {
-    width: 90%;
-    margin-left: -10px;
+    width: 80%;
     margin-top: 30px;
   }
 }

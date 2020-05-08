@@ -27,17 +27,32 @@
   float: right;
 }
 
+@media only screen and (max-width: 1025px) {
+  .container {
+    padding-left: 0px;
+    width: 100vw;
+  }
+
+  .logo-size {
+    width: 6%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .title {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .home {
-    height: 220vh;
+    height: 125vh;
   }
 
   .logo-size {
     width: 8%;
     float: left;
+  }
+
+  .container {
+    padding-left: 50px;
   }
 }

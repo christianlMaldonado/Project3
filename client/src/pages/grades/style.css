@@ -3,21 +3,36 @@
   height: 100%;
   text-align: center;
   padding-top: 30px;
-  margin-top: 10px;
-  margin-left: -20vw;
+  margin-left: -18vw;
   width: 100vw;
   padding-bottom: 10vh;
 }
 
 .table-container {
   width: 80%;
-  margin-left: 12%;
+  margin-left: 12vw;
+}
+
+@media only screen and (max-width: 1025px) {
+  .grades {
+    margin-top: 0px;
+    width: 100vw;
+    margin-left: 0vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .grades {
     margin-top: 0px;
-    width: 89vw;
     margin-left: -15vw;
+  }
+
+  .table-container {
+    margin-left: 3vw;
+    width: 98vw;
+  }
+
+  .MuiTableContainer-root {
+    width: 103% !important;
   }
 }

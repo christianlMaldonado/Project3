@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Authenticated from "./components/Authenticated";
 import Navbar from "./components/navbar/navbar";
 import Home from "./pages/home/home";
@@ -10,6 +15,7 @@ import Virtual from "./pages/virtual/virtual";
 import Create from "./pages/create/create";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
+import NoMatch from "./pages/404/404";
 import "./App.css";
 
 function App() {
@@ -44,7 +50,8 @@ function App() {
             <Authenticated>
               <Route component={Default} />
             </Authenticated>
-            {/* <Route component={NoMatch} /> */}
+            {/* this right here, this leads to the 404 page */}
+            <Route component={NoMatch} />
           </Switch>
         </div>
       </Router>

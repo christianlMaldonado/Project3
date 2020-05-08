@@ -62,11 +62,18 @@ textarea {
   border: 1px lightgray solid !important;
 }
 
+@media only screen and (max-width: 1025px) {
+  .create {
+    margin-top: 10px;
+    width: 95vw;
+    margin-left: 2.5vw;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .create {
     margin-top: 0px;
-    width: 89vw;
-    margin-left: -15vw;
+    margin-left: -10.5vw;
   }
 
   .form-container {
@@ -75,5 +82,10 @@ textarea {
 
   .create-title {
     font-size: 20px;
+  }
+
+  .create-button {
+    font-size: 9px;
+    margin-bottom: 20px;
   }
 }

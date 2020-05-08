@@ -65,7 +65,7 @@ button {
 .login-image {
   float: left;
   width: 48.8vw;
-  height: 100% !important;
+  height: 100vh !important;
 }
 
 .MuiTypography-h5 {
@@ -82,7 +82,7 @@ button {
   color: rgb(119, 147, 172) !important;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1025px) {
   .login-image {
     display: none;
   }
@@ -94,6 +94,18 @@ button {
   }
 
   .MuiAvatar-root {
-    margin-left: 42% !important;
+    margin-left: 34vw !important;
+  }
+
+  .formHead {
+    margin-bottom: 10vh !important;
+    font-size: 50px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MuiAvatar-root {
+    margin-left: 28vw !important;
+    margin-bottom: 2vh !important;
   }
 }
