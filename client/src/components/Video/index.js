@@ -112,7 +112,7 @@ function App() {
   if (receivingCall) {
     incomingCall = (
       <div>
-        <h1>{caller} is calling you</h1>
+        <h3>{caller} is calling you</h3>
         <button onClick={acceptCall}>Accept</button>
       </div>
     );
@@ -128,7 +128,11 @@ function App() {
           if (key === yourID) {
             return null;
           }
-          return <button onClick={() => callPeer(key)}>Call {key}</button>;
+          return (
+            <button key={Math.floor(Math.random() * 100000)} onClick={() => callPeer(key)}>
+              Call {key}
+            </button>
+          );
         })}
       </Row>
       <Row>{incomingCall}</Row>
