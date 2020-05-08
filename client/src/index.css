@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Raleway", sans-serif;
 }
 
 .ktLOBU {
@@ -11,6 +14,10 @@ body {
   margin-top: 20vh !important;
   margin-left: 30vw;
   margin-bottom: 10vh;
+}
+
+.form {
+  font-family: "Raleway", sans-serif !important;
 }
 
 @media only screen and (max-width: 600px) {

@@ -4,7 +4,8 @@
   text-align: center;
   padding-top: 30px;
   margin-top: 10px;
-  width: 65vw;
+  margin-left: -20vw;
+  width: 100vw;
   padding-bottom: 10vh;
 }
 
@@ -31,17 +32,14 @@
 }
 
 .check-in {
-  padding: 6px 16px;
   font-size: 12px;
   width: 115px !important;
-  box-sizing: border-box;
   background-color: rgb(117, 143, 165);
   border: 2px rgb(117, 143, 165) solid;
   color: white;
-  font-weight: 500;
-  line-height: 1.75;
   border-radius: 4px;
   text-transform: uppercase;
+  margin-right: 100px;
 }
 
 .check-in:hover {
