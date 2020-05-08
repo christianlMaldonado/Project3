@@ -5,52 +5,69 @@ import logout from "../../helpers/logout";
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
   return (
-    <div
-      className="nav"
-      onMouseEnter={() => setIsShown(true)}
-      onMouseLeave={() => setIsShown(false)}
-    >
-      <ul>
-        {" "}
-        <a href="/home">
-          <li>
-            <i className="fa fa-home" data-hover="Home">
-              {isShown && "  Home"}
-            </i>
-          </li>{" "}
-        </a>
-        <a href="/grades">
-          <li>
-            <i className="fa fa-check-square" data-hover="Grades">
-              {isShown && "  Grades"}
-            </i>
-          </li>
-        </a>
-        <a href="/attendance">
-          <li>
-            <i className="fa fa-calendar" data-hover="Attendance">
-              {isShown && "  Attendance"}
-            </i>
-          </li>
-        </a>
-        <a href="/assignments">
-          <li>
-            <i className="fa fa-pencil" data-hover="Assignments">
-              {isShown && "  Assignments"}
-            </i>
-          </li>
-        </a>
+    <>
+      <div
+        className="nav"
+        onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}
+      >
+        <ul>
+          {" "}
+          <a href="/home">
+            <li>
+              <i className="fa fa-home" data-hover="Home">
+                {isShown && "  Home"}
+              </i>
+            </li>{" "}
+          </a>
+          <a href="/grades">
+            <li>
+              <i className="fa fa-check-square" data-hover="Grades">
+                {isShown && "  Grades"}
+              </i>
+            </li>
+          </a>
+          <a href="/attendance">
+            <li>
+              <i className="fa fa-calendar" data-hover="Attendance">
+                {isShown && "  Attendance"}
+              </i>
+            </li>
+          </a>
+          <a href="/assignments">
+            <li>
+              <i className="fa fa-pencil" data-hover="Assignments">
+                {isShown && "  Assignments"}
+              </i>
+            </li>
+          </a>
+        </ul>
+        <ul className="logout">
+          <a href="/" onClick={logout}>
+            <li>
+              <i className="fa fa-sign-out" data-hover="Assignments">
+                {isShown && "  Sign Out"}
+              </i>
+            </li>
+          </a>
+        </ul>
+      </div>
+
+      <ul class="sidenav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/grades">Grades</a>
+        </li>
+        <li>
+          <a href="/attendance">Attendance</a>
+        </li>
+        <li>
+          <a href="/assignments">Assignments</a>
+        </li>
       </ul>
-      <ul className="logout">
-        <a href="/" onClick={logout}>
-          <li>
-            <i className="fa fa-sign-out" data-hover="Assignments">
-              {isShown && "  Sign Out"}
-            </i>
-          </li>
-        </a>
-      </ul>
-    </div>
+    </>
   );
 }
 

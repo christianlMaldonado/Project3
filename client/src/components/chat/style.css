@@ -12,6 +12,7 @@
   margin-right: 10px;
   background-color: white;
   height: 35px;
+  padding-top: 6px !important;
 }
 
 .chat-submit {
@@ -59,7 +60,7 @@
 
   .chat-submit {
     width: 70px;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-right: 9vw;
   }
 
@@ -74,7 +75,7 @@
   }
 
   .py-5 {
-    margin-right: 9vw;
-    margin-top: 10px;
+    margin-top: 10px !important;
+    margin-right: 10vw;
   }
 }

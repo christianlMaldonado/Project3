@@ -69,7 +69,12 @@ class Attendance extends Component {
               <div className="table-container">
                 {this.state.user.isStudent ? (
                   !this.state.checkedIn ? (
-                    <button onClick={this.studentCheckIn}>Check In</button>
+                    <button
+                      className="check-in btn-floating pulse btn-large"
+                      onClick={this.studentCheckIn}
+                    >
+                      Check In
+                    </button>
                   ) : (
                     <h3>You are checked in already!</h3>
                   )

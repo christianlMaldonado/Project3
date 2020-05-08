@@ -32,14 +32,32 @@ class Home extends Component {
     if (this.state.user !== undefined) {
       return (
         <div className="home">
-          <div className="title">Welcome, {this.state.user.name}</div>
+          <div className="title">
+            {" "}
+            <img
+              alt="logo"
+              className="logo-size"
+              src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
+            ></img>{" "}
+            Welcome, {this.state.user.name}
+          </div>
           <div className="container">
             {!this.state.user.isStudent
               ? this.state.home.map((data) => (
-                  <Tiles key={data.id} url={data.url} name={data.name} image={data.image} />
+                  <Tiles
+                    key={data.id}
+                    url={data.url}
+                    name={data.name}
+                    image={data.image}
+                  />
                 ))
               : this.state.stuHome.map((data) => (
-                  <Tiles key={data.id} url={data.url} name={data.name} image={data.image} />
+                  <Tiles
+                    key={data.id}
+                    url={data.url}
+                    name={data.name}
+                    image={data.image}
+                  />
                 ))}
           </div>
         </div>

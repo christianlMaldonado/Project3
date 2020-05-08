@@ -1,7 +1,7 @@
 .home {
   width: 100vw;
   height: 100%;
-  background-color: rgb(226, 236, 245);
+  background-color: rgb(234, 242, 248);
 }
 
 .title {
@@ -21,6 +21,12 @@
   max-width: none;
 }
 
+.logo-size {
+  width: 5%;
+  margin-bottom: -3px;
+  float: right;
+}
+
 @media only screen and (max-width: 600px) {
   .title {
     font-size: 25px;
@@ -28,5 +34,10 @@
 
   .home {
     height: 220vh;
+  }
+
+  .logo-size {
+    width: 8%;
+    float: left;
   }
 }
