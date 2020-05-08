@@ -1,14 +1,14 @@
 .chat-container {
-  position: absolute;
+  position: relative;
   margin-left: 15%;
   width: 85%;
   bottom: 0px;
-  margin-bottom: 20px;
+  margin-top: 5vh;
 }
 
 .form-control {
   resize: none !important;
-  width: 80%;
+  width: 79.5%;
   margin-right: 10px;
   background-color: white;
   height: 35px;
@@ -52,10 +52,12 @@
   background-color: rgb(102, 134, 160);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1025px) {
   .chat-container {
+    margin-top: 13vw;
     width: 85vw;
     text-align: center;
+    margin-left: 11vw;
   }
 
   .chat-submit {
@@ -67,10 +69,41 @@
   .chat-area {
     text-align: left !important;
     padding-left: 8px;
+    width: 90%;
   }
 
   .form-control {
-    width: 84%;
+    width: 90%;
+    margin-right: 10vw;
+  }
+
+  .py-5 {
+    margin-top: 10px !important;
+    margin-right: 10vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .chat-container {
+    width: 85vw;
+    text-align: center;
+    margin-left: 14vw;
+  }
+
+  .chat-submit {
+    width: 70px;
+    margin-top: 10px;
+    margin-right: 9vw;
+  }
+
+  .chat-area {
+    text-align: left !important;
+    padding-left: 8px;
+    width: 90%;
+  }
+
+  .form-control {
+    width: 90%;
     margin-right: 54px;
   }
 

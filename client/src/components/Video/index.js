@@ -24,12 +24,14 @@ function App() {
 
   useEffect(() => {
     socket.current = io.connect("/");
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
-      setStream(stream);
-      if (userVideo.current) {
-        userVideo.current.srcObject = stream;
-      }
-    });
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: true })
+      .then((stream) => {
+        setStream(stream);
+        if (userVideo.current) {
+          userVideo.current.srcObject = stream;
+        }
+      });
 
     socket.current.on("yourID", (id) => {
       setYourID(id);
@@ -53,7 +55,11 @@ function App() {
     });
 
     peer.on("signal", (data) => {
-      socket.current.emit("callUser", { userToCall: id, signalData: data, from: yourID });
+      socket.current.emit("callUser", {
+        userToCall: id,
+        signalData: data,
+        from: yourID,
+      });
     });
 
     peer.on("stream", (stream) => {
@@ -88,20 +94,27 @@ function App() {
 
   let UserVideo;
   if (stream) {
-    UserVideo = <video id="uservideo" playsInline muted ref={userVideo} autoPlay />;
+    UserVideo = (
+      <video id="uservideo" playsInline muted ref={userVideo} autoPlay />
+    );
   }
 
   let PartnerVideo;
   if (callAccepted) {
-    PartnerVideo = <video id="partnervideo" playsInline ref={partnerVideo} autoPlay />;
+    PartnerVideo = (
+      <video id="partnervideo" playsInline ref={partnerVideo} autoPlay />
+    );
   }
 
   let incomingCall;
   if (receivingCall) {
     incomingCall = (
       <div>
-        <h3>{caller} is calling you</h3>
-        <button onClick={acceptCall}>Accept</button>
+        {/* removed caller below */}
+        <span className="incoming-text">{}You have an incoming call! </span>
+        <button onClick={acceptCall} className="accept">
+          Accept
+        </button>
       </div>
     );
   }
@@ -117,13 +130,18 @@ function App() {
             return null;
           }
           return (
-            <button key={Math.floor(Math.random() * 100000)} onClick={() => callPeer(key)}>
-              Call {key}
+            <button
+              key={Math.floor(Math.random() * 100000)}
+              onClick={() => callPeer(key)}
+              className="call"
+            >
+              Call {}
+              {/* removed key from above, need user name */}
             </button>
           );
         })}
       </Row>
-      <Row>{incomingCall}</Row>
+      <Row className="incoming-position">{incomingCall}</Row>
     </div>
   );
 }

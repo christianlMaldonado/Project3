@@ -94,7 +94,7 @@ class Register extends Component {
                     type="email"
                     label="Email Address"
                     name="email"
-                    autoComplete="email"
+                    autoComplete="false"
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -106,7 +106,7 @@ class Register extends Component {
                     label="Password"
                     type="password"
                     id="password"
-                    autoComplete="current-password"
+                    autoComplete="false"
                   />
                 </Grid>
               </Grid>
