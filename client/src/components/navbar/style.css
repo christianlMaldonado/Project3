@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
 .nav {
   left: 0;
   height: 102% !important;
@@ -38,12 +40,15 @@ li {
   padding-top: 10px;
   padding-left: 30px;
   padding-bottom: 10px;
-  text-transform: uppercase;
+  font-size: 16px;
 }
 
 li:hover {
-  background-color: rgb(141, 176, 204);
-  color: white !important;
+  background-color: rgb(141, 176, 204) !important;
+}
+
+.addedLink {
+  font-family: "Raleway", sans-serif;
 }
 
 @keyframes scroll-right {
