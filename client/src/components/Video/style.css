@@ -1,23 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
 .videoContainer {
   position: relative;
   top: 10vh;
   left: 15vw;
   width: 80vw;
   height: 60vh;
+  text-align: center;
 }
 
 #uservideo {
   border: 0px solid rgb(27, 27, 139, 0) !important;
-  width: 20vw !important;
-  height: 40vh !important;
+  width: 15vw !important;
+  height: 100% !important;
   position: absolute;
   top: -5vh;
-  right: 0;
-  z-index: 20;
+  right: 7vw;
 }
 
 #partnervideo {
+  position: relative;
   border: 0px solid rgb(27, 27, 139, 0) !important;
-  width: 60vw !important;
-  height: 40vh !important;
+  width: 30vw !important;
+  height: 100% !important;
+  margin-top: 4.5vh;
+  left: 20vw;
+}
+
+.accept {
+  font-family: "Raleway", sans-serif !important;
+  padding: 6px 16px;
+  font-size: 12px;
+  min-width: 64px;
+  box-sizing: border-box;
+  background-color: rgb(117, 143, 165) !important;
+  border: 2px rgb(117, 143, 165) solid !important;
+  color: white;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.accept:hover {
+  background-color: rgb(161, 186, 209) !important;
+  border: 2px rgb(161, 186, 209) solid !important;
+  cursor: pointer;
+}
+
+.call {
+  position: absolute;
+  margin-top: 42vh;
+  right: 12vw;
+  font-family: "Raleway", sans-serif !important;
+  padding: 6px 16px;
+  font-size: 12px;
+  min-width: 64px;
+  box-sizing: border-box;
+  background-color: rgb(117, 143, 165) !important;
+  border: 2px rgb(117, 143, 165) solid !important;
+  color: white;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.call:hover {
+  background-color: rgb(161, 186, 209) !important;
+  border: 2px rgb(161, 186, 209) solid !important;
+  cursor: pointer;
+}
+
+.incoming-position {
+  position: relative;
+  margin-top: 42vh;
+  left: 0;
+}
+
+.incoming-text {
+  font-family: "Raleway", sans-serif !important;
+}
+
+@media only screen and (max-width: 1025px) {
+  #uservideo {
+    width: 20vw !important;
+    top: 10vh;
+    right: 10vw;
+    z-index: 5;
+  }
+
+  #partnervideo {
+    width: 80vw !important;
+    margin-top: 5vh;
+    left: -6vw;
+  }
+
+  .call {
+    margin-top: 55vh;
+    right: 17vw;
+  }
+
+  .incoming-position {
+    margin-top: 55vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #uservideo {
+    width: 30vw !important;
+    top: 14vh;
+    right: 27vw;
+  }
+
+  #partnervideo {
+    width: 90vw !important;
+    margin-top: 6vh;
+    left: -8vw;
+  }
+
+  .call {
+    margin-top: 39vh;
+    right: 12vw;
+  }
 }

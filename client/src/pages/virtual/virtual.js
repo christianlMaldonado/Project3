@@ -9,8 +9,8 @@ function Virtual() {
       <div className="title">Classroom</div>
       <div className="virtual">
         <Video />
+        <Chat />
       </div>
-      <Chat />
     </>
   );
 }
