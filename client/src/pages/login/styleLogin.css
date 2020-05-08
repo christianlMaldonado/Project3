@@ -18,6 +18,12 @@
   display: block !important;
 }
 
+.loginContainer {
+  width: 40% !important;
+  float: right;
+  margin-right: 5vw !important;
+}
+
 input[type="text"]:not(.browser-default):focus:not([read-only]) {
   border-bottom: 2px solid rgb(119, 147, 172) !important;
   box-shadow: none !important;
@@ -45,4 +51,35 @@ input[type="text"]:not(.browser-default) {
 
 .MuiInput-underline:hover:not(.Mui-disabled):before {
   border-bottom: none !important;
+}
+
+.login-image {
+  float: left;
+  width: 48vw;
+  height: 100vh !important;
+}
+
+.MuiTypography-h5 {
+  margin-right: 35px !important;
+}
+
+.formHead {
+  color: rgb(119, 147, 172);
+  font-size: 30px !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .login-image {
+    display: none;
+  }
+
+  .loginContainer {
+    float: none !important;
+    width: 80% !important;
+    margin-right: 10vw !important;
+  }
+
+  .MuiAvatar-root {
+    margin-left: 47% !important;
+  }
 }

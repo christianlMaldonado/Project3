@@ -1,13 +1,23 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.ktLOBU {
+  border: 0px solid rgb(27, 27, 139, 0) !important;
+  width: 40vw !important;
+  height: 40vh !important;
+  margin-top: 20vh !important;
+  margin-left: 30vw;
+  margin-bottom: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .ktLOBU {
+    margin-top: 5vh !important;
+    width: 50vw !important;
+    height: 50vh !important;
+    margin-left: 25% !important;
+  }
 }

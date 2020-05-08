@@ -24,6 +24,7 @@ input[type="text"]:not(.browser-default):focus:not([read-only]) {
 
 input[type="text"]:not(.browser-default) {
   border-color: lightgray !important;
+  width: 100% !important;
 }
 
 input[type="password"]:not(.browser-default):focus:not([read-only]) {
@@ -53,4 +54,13 @@ input[type="password"]:not(.browser-default) {
 
 .MuiInput-underline:hover:not(.Mui-disabled):before {
   border-bottom: none !important;
+}
+
+.MuiContainer-root {
+  margin-top: -60px;
+}
+
+.MuiGrid-spacing-xs-2 > .MuiGrid-item {
+  padding: 8px;
+  max-width: 100% !important;
 }

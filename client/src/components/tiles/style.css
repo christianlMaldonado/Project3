@@ -15,8 +15,8 @@
 
 .overlay {
   text-align: center;
-  padding-top: 25%;
-  transition: 3s ease;
+  padding-top: 28%;
+  transition: 1s ease;
 }
 
 .home-tile .overlay {
@@ -35,17 +35,17 @@
 
 .home-tile:hover .overlay {
   display: inline;
-  background: rgb(106, 140, 168);
+  background: rgb(85, 116, 141);
   position: absolute;
   height: 98.5%;
 }
 
 @keyframes change {
   0% {
-    background-color: rgb(106, 140, 168, 0);
+    background-color: rgb(85, 116, 141, 0);
   }
   100% {
-    background-color: rgb(106, 140, 168);
+    background-color: rgb(85, 116, 141);
   }
 }
 

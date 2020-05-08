@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Container, TBody, Row, Header, Cell, Tbl } from "../../components/tables/index";
+import {
+  Container,
+  Tbl,
+  TBody,
+  Row,
+  Header,
+  Cell,
+} from "../../components/tables/index";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
+import Loading from "../../components/loading/loading";
 
 class Assignments extends Component {
   constructor(props) {
@@ -126,7 +134,10 @@ class Assignments extends Component {
                                 Link
                               </Button>
                             </Cell>
-                            <Cell align="right" key={homework.assignment.description}>
+                            <Cell
+                              align="right"
+                              key={homework.assignment.description}
+                            >
                               <b>{homework.assignment.description}</b>
                             </Cell>
                           </Row>
@@ -136,10 +147,16 @@ class Assignments extends Component {
                   </Container>
                 ) : (
                   <>
-                    <Button variant="contained" color="primary" onClick={this.seeAssignments}>
+                    <Button
+                      className="see-assignments"
+                      variant="contained"
+                      color="primary"
+                      onClick={this.seeAssignments}
+                      style={{ marginBottom: "40px" }}
+                    >
                       See Assignments
                     </Button>
-                    <Container>
+                    <Container component={Paper}>
                       <Tbl>
                         <Header>
                           <Row>
@@ -160,38 +177,41 @@ class Assignments extends Component {
                         <TBody>
                           {this.state.students ? (
                             this.state.students.map((student) => {
-                              return student.student.schoolWork.map((assignment) => (
-                                <Row>
-                                  <Cell>
-                                    <b>{student.name}</b>
-                                  </Cell>
-                                  <Cell>
-                                    <b>{assignment.assignment.name}</b>
-                                  </Cell>
-                                  <Cell>
-                                    <b>{assignment.assignment.link}</b>
-                                  </Cell>
-                                  <Cell>
-                                    <TextField
-                                      lable="grade"
-                                      type="number"
-                                      name="grade"
-                                      onChange={this.handleInputChange}
-                                    />
-                                    <Button
-                                      variant="outlined"
-                                      onClick={() =>
-                                        this.submitGrade({
-                                          username: student.username,
-                                          assignment: assignment.assignment.name,
-                                        })
-                                      }
-                                    >
-                                      Submit Grade
-                                    </Button>
-                                  </Cell>
-                                </Row>
-                              ));
+                              return student.student.schoolWork.map(
+                                (assignment) => (
+                                  <Row>
+                                    <Cell>
+                                      <b>{student.name}</b>
+                                    </Cell>
+                                    <Cell>
+                                      <b>{assignment.assignment.name}</b>
+                                    </Cell>
+                                    <Cell>
+                                      <b>{assignment.assignment.link}</b>
+                                    </Cell>
+                                    <Cell>
+                                      <TextField
+                                        lable="grade"
+                                        type="number"
+                                        name="grade"
+                                        onChange={this.handleInputChange}
+                                      />
+                                      <Button
+                                        variant="outlined"
+                                        onClick={() =>
+                                          this.submitGrade({
+                                            username: student.username,
+                                            assignment:
+                                              assignment.assignment.name,
+                                          })
+                                        }
+                                      >
+                                        Submit Grade
+                                      </Button>
+                                    </Cell>
+                                  </Row>
+                                )
+                              );
                             })
                           ) : (
                             <Row></Row>
@@ -207,7 +227,7 @@ class Assignments extends Component {
         </>
       );
     } else {
-      return <div>loding</div>;
+      return <Loading />;
     }
   }
 }

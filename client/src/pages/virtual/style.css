@@ -1,6 +1,6 @@
 .virtual {
   background-color: rgb(226, 236, 245);
-  height: 101vh;
+  height: 105vh;
   margin-left: -7px;
   padding-top: 30px;
   margin-top: -10px;
@@ -8,6 +8,6 @@
 
 @media only screen and (max-width: 600px) {
   .virtual {
-    height: 101.6vh;
+    height: 105.5vh;
   }
 }
