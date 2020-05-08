@@ -140,11 +140,7 @@ class Create extends Component {
                   autocomplete="off"
                 />
                 <Btn
-                  disabled={
-                    !this.state.firstName ||
-                    !this.state.lastName ||
-                    !this.state.password
-                  }
+                  disabled={!this.state.firstName || !this.state.lastName || !this.state.password}
                   onClick={this.addStudent}
                   className="create-button"
                 >
@@ -156,10 +152,12 @@ class Create extends Component {
         </>
       ) : (
         <>
-          <div className="title">Create an Assignment</div>
-          <h3>
-            Sorry {this.state.user.name}, you don't have access to this page
-          </h3>
+          <div className="title">Create</div>
+          <div className="container">
+            <div className="create">
+              <h3>Sorry {this.state.user.name}, you don't have access to this page</h3>
+            </div>
+          </div>
         </>
       );
     } else {
