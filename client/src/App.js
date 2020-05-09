@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Authenticated from "./components/Authenticated";
 import Navbar from "./components/navbar/navbar";
 import Home from "./pages/home/home";
@@ -26,6 +31,7 @@ function App() {
     <>
       <div>
         <Navbar />
+        <Mobile />
       </div>
       <Route exact path="/home" component={Home} />
       <Route exact path="/grades" component={Grades} />

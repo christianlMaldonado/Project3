@@ -53,7 +53,7 @@ class Grades extends Component {
               className="logo-size"
               src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
             ></img>{" "}
-            Grades
+            <span className="top-title-create">Assignments</span>
           </div>
           <div className="container">
             <div className="grades">

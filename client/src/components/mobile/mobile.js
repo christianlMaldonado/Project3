@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import "./style.css";
 
 export default function Mobile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -15,24 +16,37 @@ export default function Mobile() {
   };
 
   return (
-    <div>
+    <div className="mobile-nav">
       <Button
+        className="menu-button"
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
       >
-        Open Menu
+        <i class="fa fa-bars fa-2x"></i>
       </Button>
       <Menu
-        id="simple-menu"
+        className="mobile-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose} className="menu-item-mobile">
+          <a href="/home">Home</a>
+        </MenuItem>
+        <MenuItem onClick={handleClose} className="menu-item-mobile">
+          <a href="/grades">Grades</a>
+        </MenuItem>
+        <MenuItem onClick={handleClose} className="menu-item-mobile">
+          <a href="/attendance">Attendance</a>
+        </MenuItem>
+        <MenuItem onClick={handleClose} className="menu-item-mobile">
+          <a href="/assignments">Assignments</a>
+        </MenuItem>
+        <MenuItem onClick={handleClose} className="menu-item-mobile">
+          <a href="/virtual">Virtual</a>
+        </MenuItem>
       </Menu>
     </div>
   );

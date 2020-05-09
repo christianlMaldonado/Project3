@@ -89,6 +89,8 @@
   line-height: 1.75;
   border-radius: 4px;
   text-transform: uppercase;
+  position: absolute;
+  margin-top: -46vh;
 }
 
 .hangup:hover {
@@ -129,6 +131,11 @@
   .incoming-position {
     margin-top: 55vh;
   }
+
+  .hangup {
+    margin-top: -50vh;
+    margin-left: 30vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -147,5 +154,10 @@
   .call {
     margin-top: 39vh;
     right: 12vw;
+  }
+
+  .hangup {
+    margin-top: -42vh;
+    margin-left: 25vw;
   }
 }

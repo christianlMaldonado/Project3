@@ -5,7 +5,7 @@
   padding-top: 30px;
   padding-bottom: 10vh;
   margin-left: -18vw;
-  width: 97.5vw;
+  width: 100vw;
   margin-top: -2vh;
 }
 
@@ -52,5 +52,16 @@ button:focus {
   .assignments {
     margin-top: -4vh;
     margin-left: -8vw;
+  }
+
+  .top-title {
+    position: absolute;
+    left: 30vw;
+    margin-top: -1vh !important;
+    font-size: 25px;
+  }
+
+  .title {
+    padding-bottom: 4vh;
   }
 }
