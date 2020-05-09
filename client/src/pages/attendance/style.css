@@ -2,10 +2,10 @@
   background-color: rgb(191, 215, 236);
   height: 100%;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 8vh;
+  padding-bottom: 5vh;
   margin-left: -18vw;
   width: 100vw;
-  padding-bottom: 10vh;
   margin-top: -2vh;
 }
 
@@ -51,6 +51,11 @@
 button:focus {
   background-color: rgb(161, 186, 209) !important;
   border: 2px rgb(161, 186, 209) !important;
+}
+
+.attendance-image {
+  width: 45vw;
+  float: right;
 }
 
 @media only screen and (max-width: 1025px) {
