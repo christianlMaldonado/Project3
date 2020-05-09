@@ -52,21 +52,6 @@ function Navbar() {
           </a>
         </ul>
       </div>
-
-      <ul class="sidenav">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/grades">Grades</a>
-        </li>
-        <li>
-          <a href="/attendance">Attendance</a>
-        </li>
-        <li>
-          <a href="/assignments">Assignments</a>
-        </li>
-      </ul>
     </>
   );
 }
