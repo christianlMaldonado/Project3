@@ -27,7 +27,7 @@
   left: 20vw;
 }
 
-.accept {
+#accept {
   font-family: "Raleway", sans-serif !important;
   padding: 6px 16px;
   font-size: 12px;
@@ -42,13 +42,13 @@
   text-transform: uppercase;
 }
 
-.accept:hover {
+#accept:hover {
   background-color: rgb(161, 186, 209) !important;
   border: 2px rgb(161, 186, 209) solid !important;
   cursor: pointer;
 }
 
-.call {
+#call {
   position: absolute;
   margin-top: 42vh;
   right: 12vw;
@@ -66,10 +66,14 @@
   text-transform: uppercase;
 }
 
-.call:hover {
+#call:hover {
   background-color: rgb(161, 186, 209) !important;
   border: 2px rgb(161, 186, 209) solid !important;
   cursor: pointer;
+}
+
+.hideButtons {
+  display: none;
 }
 
 .hangup {
@@ -99,7 +103,7 @@
   left: 0;
 }
 
-.incoming-text {
+#incoming-text {
   font-family: "Raleway", sans-serif !important;
 }
 

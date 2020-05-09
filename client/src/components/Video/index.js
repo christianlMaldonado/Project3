@@ -100,8 +100,9 @@ function App() {
     UserVideo = <video id="uservideo" playsInline muted ref={userVideo} autoPlay />;
   }
 
-  let PartnerVideo, HangUp;
+  let PartnerVideo, HangUp, hide;
   if (callAccepted) {
+    hide = "hideButtons";
     PartnerVideo = <video id="partnervideo" playsInline ref={partnerVideo} autoPlay />;
     HangUp = (
       <button className="hangup" onClick={endCall}>
@@ -115,13 +116,16 @@ function App() {
     incomingCall = (
       <div>
         {/* removed caller below */}
-        <span className="incoming-text">{}You have an incoming call! </span>
-        <button onClick={acceptCall} className="accept">
+        <span id="incoming-text" className={hide}>
+          {}You have an incoming call!{" "}
+        </span>
+        <button onClick={acceptCall} id="accept" className={hide}>
           Accept
         </button>
       </div>
     );
   }
+
   return (
     <div className="videoContainer">
       <Row>
@@ -137,7 +141,8 @@ function App() {
             <button
               key={Math.floor(Math.random() * 100000)}
               onClick={() => callPeer(key)}
-              className="call"
+              id="call"
+              className={hide}
             >
               Call {}
               {/* removed key from above, need user name */}
