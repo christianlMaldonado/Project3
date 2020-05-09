@@ -15,7 +15,7 @@ class Grades extends Component {
       students: undefined,
       //teacher: undefined,
     };
-    this.getAssignments = this.getAssignments.bind(this);
+    this.seeGrades = this.seeGrades.bind(this);
   }
 
   componentDidMount() {
