@@ -72,6 +72,27 @@
   cursor: pointer;
 }
 
+.hangup {
+  font-family: "Raleway", sans-serif !important;
+  padding: 6px 16px;
+  font-size: 12px;
+  min-width: 64px;
+  box-sizing: border-box;
+  background-color: rgb(117, 143, 165) !important;
+  border: 2px rgb(117, 143, 165) solid !important;
+  color: white;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.hangup:hover {
+  background-color: rgb(161, 186, 209) !important;
+  border: 2px rgb(161, 186, 209) solid !important;
+  cursor: pointer;
+}
+
 .incoming-position {
   position: relative;
   margin-top: 42vh;
