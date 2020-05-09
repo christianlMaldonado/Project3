@@ -7,17 +7,13 @@ import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
 import Loading from "../../components/loading/loading";
 
-
 class Grades extends Component {
   constructor(props) {
     super(props);
     this.state = {
       user: undefined,
       students: undefined,
-<<<<<<< HEAD
-=======
       //teacher: undefined,
->>>>>>> 1c8d630ed6c79fff6592f585696bf0b44d20a762
     };
     this.getAssignments = this.getAssignments.bind(this);
   }
@@ -28,26 +24,21 @@ class Grades extends Component {
       this.props.history.push("/");
     }
     API.userPortal(jwt)
-      .then((res) => { console.log(res)
+      .then((res) => {
+        console.log(res);
         this.setState({
           user: res.data.user,
-        }); console.log(this.state.user)
+        });
+        console.log(this.state.user);
       })
       .catch((err) => {
-<<<<<<< HEAD
-=======
         localStorage.removeItem("id_token");
->>>>>>> 1c8d630ed6c79fff6592f585696bf0b44d20a762
         this.props.history.push("/");
       });
   }
 
-<<<<<<< HEAD
-  getAssignments = () => {
-=======
   // get assignments of students
   seeGrades = () => {
->>>>>>> 1c8d630ed6c79fff6592f585696bf0b44d20a762
     API.takeAttendance().then((res) => {
       this.setState({
         students: res.data,
@@ -87,10 +78,6 @@ class Grades extends Component {
                           </Cell>
                         </Row>
                       </Header>
-<<<<<<< HEAD
-
-=======
->>>>>>> 1c8d630ed6c79fff6592f585696bf0b44d20a762
                       <TBody>
                         {this.state.user.student.schoolWork.map((homework) => (
                           <Row key={homework.assignment._id}>
@@ -114,11 +101,7 @@ class Grades extends Component {
                       className="see-assignments"
                       variant="contained"
                       color="primary"
-<<<<<<< HEAD
-                      onClick={this.getAssignments}
-=======
                       onClick={this.seeGrades}
->>>>>>> 1c8d630ed6c79fff6592f585696bf0b44d20a762
                       style={{ marginBottom: "40px" }}
                     >
                       See Grades
@@ -174,7 +157,6 @@ class Grades extends Component {
           </div>
         </>
       );
-
     } else {
       return <Loading />;
     }
