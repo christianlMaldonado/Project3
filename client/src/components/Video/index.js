@@ -24,14 +24,12 @@ function App() {
 
   useEffect(() => {
     socket.current = io.connect("/");
-    navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
-      .then((stream) => {
-        setStream(stream);
-        if (userVideo.current) {
-          userVideo.current.srcObject = stream;
-        }
-      });
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
+      setStream(stream);
+      if (userVideo.current) {
+        userVideo.current.srcObject = stream;
+      }
+    });
 
     socket.current.on("yourID", (id) => {
       setYourID(id);
@@ -92,17 +90,23 @@ function App() {
     peer.signal(callerSignal);
   }
 
-  let UserVideo;
-  if (stream) {
-    UserVideo = (
-      <video id="uservideo" playsInline muted ref={userVideo} autoPlay />
-    );
+  function endCall() {
+    setReceivingCall(false);
+    setCallAccepted(false);
   }
 
-  let PartnerVideo;
+  let UserVideo;
+  if (stream) {
+    UserVideo = <video id="uservideo" playsInline muted ref={userVideo} autoPlay />;
+  }
+
+  let PartnerVideo, HangUp;
   if (callAccepted) {
-    PartnerVideo = (
-      <video id="partnervideo" playsInline ref={partnerVideo} autoPlay />
+    PartnerVideo = <video id="partnervideo" playsInline ref={partnerVideo} autoPlay />;
+    HangUp = (
+      <button className="hangup" onClick={endCall}>
+        Hang Up
+      </button>
     );
   }
 
@@ -141,7 +145,9 @@ function App() {
           );
         })}
       </Row>
-      <Row className="incoming-position">{incomingCall}</Row>
+      <Row className="incoming-position">
+        {incomingCall} {HangUp}
+      </Row>
     </div>
   );
 }
