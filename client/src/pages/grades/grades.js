@@ -46,7 +46,15 @@ class Grades extends Component {
     if (this.state.user !== undefined) {
       return (
         <>
-          <div className="title">Grades</div>
+          <div className="title">
+            {" "}
+            <img
+              alt="logo"
+              className="logo-size"
+              src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
+            ></img>{" "}
+            Grades
+          </div>
           <div className="container">
             <div className="grades">
               <div className="table-container">

@@ -75,7 +75,15 @@ class Create extends Component {
     if (this.state.user !== undefined) {
       return !this.state.user.isStudent ? (
         <>
-          <div className="title">Create</div>
+          <div className="title">
+            {" "}
+            <img
+              alt="logo"
+              className="logo-size"
+              src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
+            ></img>{" "}
+            Create
+          </div>
           <div className="container">
             <div className="create">
               <div className="create-title">Create a New Assignment</div>
@@ -140,7 +148,11 @@ class Create extends Component {
                   autocomplete="off"
                 />
                 <Btn
-                  disabled={!this.state.firstName || !this.state.lastName || !this.state.password}
+                  disabled={
+                    !this.state.firstName ||
+                    !this.state.lastName ||
+                    !this.state.password
+                  }
                   onClick={this.addStudent}
                   className="create-button"
                 >
@@ -155,7 +167,9 @@ class Create extends Component {
           <div className="title">Create</div>
           <div className="container">
             <div className="create">
-              <h3>Sorry {this.state.user.name}, you don't have access to this page</h3>
+              <h3>
+                Sorry {this.state.user.name}, you don't have access to this page
+              </h3>
             </div>
           </div>
         </>

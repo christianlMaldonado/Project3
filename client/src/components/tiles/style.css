@@ -1,6 +1,6 @@
 .home-tile {
-  width: 35%;
-  margin-left: 7%;
+  width: 23vw;
+  margin-left: 5vw;
   margin-top: 2%;
   margin-bottom: 20px;
   float: left;
@@ -49,9 +49,16 @@
   }
 }
 
+@media only screen and (min-width: 1500px) {
+  .home-tile {
+    width: 25vw;
+    margin-top: 2%;
+  }
+}
+
 @media only screen and (max-width: 1025px) {
   .home-tile {
-    width: 40vw;
+    width: 41.5vw;
     margin-top: 2%;
     margin-right: 1vw;
     margin-bottom: 2vh;

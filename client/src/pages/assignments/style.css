@@ -1,11 +1,12 @@
 .assignments {
-  background-color: rgb(226, 236, 245);
+  background-color: rgb(191, 215, 236);
   height: 100%;
   text-align: center;
   padding-top: 30px;
   padding-bottom: 10vh;
   margin-left: -18vw;
   width: 100vw;
+  margin-top: -2vh;
 }
 
 .see-assignments {
@@ -36,7 +37,7 @@ button:focus {
 
 @media only screen and (max-width: 1025px) {
   .assignments {
-    margin-top: 0px;
+    margin-top: -4.2vh;
     width: 100vw;
     margin-left: 0vw;
   }
@@ -49,7 +50,7 @@ button:focus {
 
 @media only screen and (max-width: 600px) {
   .assignments {
-    margin-top: 0px;
-    margin-left: -15vw;
+    margin-top: -4vh;
+    margin-left: -8vw;
   }
 }

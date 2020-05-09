@@ -63,7 +63,15 @@ class Attendance extends Component {
     if (this.state.user !== undefined) {
       return (
         <>
-          <div className="title">Attendance</div>
+          <div className="title">
+            {" "}
+            <img
+              alt="logo"
+              className="logo-size"
+              src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
+            ></img>{" "}
+            Attendance
+          </div>
           <div className="container">
             <div className="attendance">
               <div className="table-container">

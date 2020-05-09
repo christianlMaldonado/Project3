@@ -1,16 +1,16 @@
 .create {
-  background-color: rgb(226, 236, 245);
+  background-color: rgb(191, 215, 236);
   margin-left: -7px;
   text-align: center;
-  margin-top: 30px;
   margin-left: -10vw;
-  width: 80vw;
-  margin-bottom: 30px;
+  width: 85vw;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
 }
 
 .create-title {
   width: 100%;
-  background-color: rgb(110, 141, 165);
+  background-color: rgb(72, 106, 133);
   color: white;
   font-size: 30px;
   padding: 10px;
@@ -64,7 +64,7 @@ textarea {
 
 @media only screen and (max-width: 1025px) {
   .create {
-    margin-top: 10px;
+    margin-top: 1vh;
     width: 95vw;
     margin-left: 2.5vw;
   }
@@ -72,8 +72,8 @@ textarea {
 
 @media only screen and (max-width: 600px) {
   .create {
-    margin-top: 0px;
-    margin-left: -10.5vw;
+    margin-top: 1vh;
+    margin-left: -5.5vw;
   }
 
   .form-container {
@@ -87,5 +87,9 @@ textarea {
   .create-button {
     font-size: 9px;
     margin-bottom: 20px;
+  }
+
+  textarea {
+    width: 81.5vw;
   }
 }
