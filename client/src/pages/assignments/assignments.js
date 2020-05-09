@@ -11,6 +11,8 @@ import {
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from "../../components/Alert";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
 import Loading from "../../components/loading/loading";
@@ -24,6 +26,8 @@ class Assignments extends Component {
       students: undefined,
       grade: undefined,
       message: "",
+      open: false,
+      severity: "",
     };
   }
 
@@ -56,9 +60,18 @@ class Assignments extends Component {
       link: this.state.link,
       user: this.state.user,
     };
-    API.submitHomework(homeworkLink).then((res) => {
-      console.log(res);
-      this.setState({ link: null, message: "Homework Submitted" });
+    API.submitHomework(homeworkLink).then((err, res) => {
+      if (err) {
+        this.setState({ message: "Retry submitting link", severity: "error", open: true });
+      }
+      this.setState({ link: null, message: "Homework Submitted", severity: "success", open: true });
+    });
+  };
+
+  handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    this.setState({
+      open: false,
     });
   };
 
@@ -77,10 +90,19 @@ class Assignments extends Component {
       grade: this.state.grade,
     };
 
-    API.gradeAssignment(homework).then((res) => {
+    API.gradeAssignment(homework).then((err, res) => {
+      if (err) {
+        this.setState({
+          message: "Grade update failed",
+          severity: "error",
+          open: true,
+        });
+      }
       this.setState({
         grade: undefined,
         message: "Grade Updated",
+        severity: "success",
+        open: true,
       });
     });
   };
@@ -101,6 +123,11 @@ class Assignments extends Component {
           <div className="container">
             <div className="assignments">
               <div className="table-container">
+                <Snackbar open={this.state.open} autoHideDuration={5000} onClose={this.handleClose}>
+                  <Alert onClose={this.handleClose} severity={this.state.severity}>
+                    {this.state.message}
+                  </Alert>
+                </Snackbar>
                 {this.state.user.isStudent ? (
                   <Container component={Paper}>
                     <Tbl>
