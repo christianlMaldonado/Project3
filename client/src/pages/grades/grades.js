@@ -1,19 +1,11 @@
 import React, { Component } from "react";
 import "./style.css";
-import {
-  Container,
-  Tbl,
-  TBody,
-  Row,
-  Header,
-  Cell,
-} from "../../components/tables/index";
+import { Container, Tbl, TBody, Row, Header, Cell } from "../../components/tables/index";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
 import Loading from "../../components/loading/loading";
-
 
 class Grades extends Component {
   constructor(props) {
@@ -23,6 +15,7 @@ class Grades extends Component {
       students: undefined,
       //teacher: undefined,
     };
+    this.seeGrades = this.seeGrades.bind(this);
   }
 
   componentDidMount() {
@@ -31,10 +24,12 @@ class Grades extends Component {
       this.props.history.push("/");
     }
     API.userPortal(jwt)
-      .then((res) => { console.log(res)
+      .then((res) => {
+        console.log(res);
         this.setState({
           user: res.data.user,
-        }); console.log(this.state.user)
+        });
+        console.log(this.state.user);
       })
       .catch((err) => {
         localStorage.removeItem("id_token");
@@ -162,7 +157,6 @@ class Grades extends Component {
           </div>
         </>
       );
-
     } else {
       return <Loading />;
     }
