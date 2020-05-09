@@ -16,6 +16,7 @@ import Create from "./pages/create/create";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import NoMatch from "./pages/404/404";
+import Mobile from "./components/mobile/mobile";
 import "./App.css";
 
 function App() {
