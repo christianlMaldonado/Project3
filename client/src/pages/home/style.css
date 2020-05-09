@@ -80,7 +80,7 @@
 
 @media only screen and (max-width: 600px) {
   .title {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .home {
@@ -98,7 +98,8 @@
 
   .top-title-home {
     position: absolute;
-    left: 21vw;
-    margin-top: -1vh !important;
+    left: 10vw;
+    margin-top: 0vh !important;
+    width: 55vw;
   }
 }
