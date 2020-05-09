@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./style-create.css";
 import { Form, Input, Text, Btn } from "../../components/Form";
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from "../../components/Alert";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
 import Loading from "../../components/loading/loading";
@@ -16,6 +18,9 @@ class Create extends Component {
       lastName: "",
       email: "",
       password: "",
+      open: false,
+      message: "",
+      severity: "",
     };
   }
   componentDidMount() {
@@ -47,9 +52,28 @@ class Create extends Component {
       assignment: this.state.assignment,
       description: this.state.description,
     };
-    API.addHomework(schoolwork).then((res) => {
-      console.log(res.data.msg);
-      this.setState({ assignment: "", description: "" });
+    API.addHomework(schoolwork).then((err, res) => {
+      if (err) {
+        this.setState({
+          message: "Assignment Not Added",
+          severity: "error",
+          open: true,
+        });
+      }
+      this.setState({
+        assignment: "",
+        description: "",
+        message: "Assignment Added Successfully",
+        severity: "success",
+        open: true,
+      });
+    });
+  };
+
+  handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    this.setState({
+      open: false,
     });
   };
 
@@ -61,13 +85,22 @@ class Create extends Component {
       username: `${this.state.firstName} ${this.state.lastName}`,
       password: this.state.password,
     };
-    API.addStudent(student).then((res) => {
-      console.log(res);
+    API.addStudent(student).then((err, res) => {
+      if (err) {
+        this.setState({
+          open: true,
+          severity: "error",
+          message: "Student not added",
+        });
+      }
       this.setState({
         firstName: "",
         lastName: "",
         email: "",
         password: "",
+        open: true,
+        severity: "success",
+        message: "Student Added",
       });
     });
   };
@@ -86,6 +119,11 @@ class Create extends Component {
           </div>
           <div className="container">
             <div className="create">
+              <Snackbar open={this.state.open} autoHideDuration={5000} onClose={this.handleClose}>
+                <Alert onClose={this.handleClose} severity={this.state.severity}>
+                  {this.state.message}
+                </Alert>
+              </Snackbar>
               <div className="create-title">Create a New Assignment</div>
               <Form>
                 <Input
@@ -148,11 +186,7 @@ class Create extends Component {
                   autocomplete="off"
                 />
                 <Btn
-                  disabled={
-                    !this.state.firstName ||
-                    !this.state.lastName ||
-                    !this.state.password
-                  }
+                  disabled={!this.state.firstName || !this.state.lastName || !this.state.password}
                   onClick={this.addStudent}
                   className="create-button"
                 >
@@ -167,9 +201,7 @@ class Create extends Component {
           <div className="title">Create</div>
           <div className="container">
             <div className="create">
-              <h3>
-                Sorry {this.state.user.name}, you don't have access to this page
-              </h3>
+              <h3>Sorry {this.state.user.name}, you don't have access to this page</h3>
             </div>
           </div>
         </>
