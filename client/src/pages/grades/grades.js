@@ -19,6 +19,7 @@ class Grades extends Component {
     this.state = {
       user: undefined,
       students: undefined,
+      //teacher: undefined,
     };
   }
 
@@ -39,8 +40,23 @@ class Grades extends Component {
       });
   }
 
+
+
+  // takeAttendance = () => {
+  //   API.takeAttendance().then((res) => {
+  //     this.setState({
+  //       students: res.data,
+  //     });
+  //   });
+  // };
+
+  // get assignments of students
   getAssignments = () => {
-    API.getHomework();
+    API.getHomework().then((res) => {
+      this.setState({
+        students: res.data.user,
+      });
+    });
   };
 
   render() {
@@ -74,7 +90,6 @@ class Grades extends Component {
                         </Cell>
                       </Row>
                     </Header>
-
                     <TBody>
                       {this.state.user.isStudent ? (
                         this.state.user.student.schoolWork.map((homework) => (
@@ -91,16 +106,42 @@ class Grades extends Component {
                           </Row>
                         ))
                       ) : (
-                        this.state.is
-                        <Row>
-                          <Cell align="right">
-                            <b>No Assignments</b>
-                          </Cell>
-                        </Row>
-                      )}
-                    </TBody>
+                            this.state.user ? (
+                              this.state.students.map((student) => {
+                                return student.student.schoolWork.map(
+                                  (assignment) => (
+                                    <Row key={Math.floor(Math.random() * 100000)}>
+                                      <Cell
+                                        key={Math.floor(Math.random() * 100000)}
+                                      >
+                                        <b>{student.name}</b>
+                                        <b>{assignment.assignment.name}</b>
+                                      </Cell>
+                                      <Cell
+                                        key={Math.floor(Math.random() * 100000)}>
+                                      
+                                        <b>{assignment.assignment.link}</b>
+                                      </Cell>
+                                      <Cell
+                                        key={Math.floor(Math.random() * 100000)}>
+                                        <b>{assignment.assignment.grade}</b> 
+                                      </Cell> 
+                                    </Row>
+                                  ))
+                              })) : ( 
+                              <Row>
+                              <Cell align="right">
+                                <b>No Assignments</b>
+                              </Cell>
+                              </Row>
+                              ))
+                              }
+                            
+                      </TBody>
                   </Tbl>
+
                 </Container>
+
               </div>
             </div>
           </div>
