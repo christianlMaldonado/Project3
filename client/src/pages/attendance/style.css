@@ -1,11 +1,12 @@
 .attendance {
-  background-color: rgb(226, 236, 245);
+  background-color: rgb(191, 215, 236);
   height: 100%;
   text-align: center;
   padding-top: 30px;
   margin-left: -18vw;
   width: 100vw;
   padding-bottom: 10vh;
+  margin-top: -2vh;
 }
 
 .take-attendance {
@@ -54,7 +55,7 @@ button:focus {
 
 @media only screen and (max-width: 1025px) {
   .attendance {
-    margin-top: 0px;
+    margin-top: -4.2vh;
     width: 100vw;
     margin-left: 0vw;
   }
@@ -62,7 +63,7 @@ button:focus {
 
 @media only screen and (max-width: 600px) {
   .attendance {
-    margin-top: 0px;
-    margin-left: -15vw;
+    margin-top: -4vh;
+    margin-left: -8vw;
   }
 }

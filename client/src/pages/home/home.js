@@ -39,7 +39,7 @@ class Home extends Component {
               className="logo-size"
               src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
             ></img>{" "}
-            Welcome, {this.state.user.name}
+            <span className="top-title"> Welcome, {this.state.user.name} </span>
           </div>
           <div className="container">
             {!this.state.user.isStudent
