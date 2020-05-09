@@ -5,10 +5,23 @@
 @media only screen and (max-width: 1025px) {
   .mobile-nav {
     display: initial !important;
-    position: absolute;
+    position: fixed;
     left: 5vw;
     z-index: 8;
     margin-top: 4vh;
+  }
+
+  .MuiMenu-list {
+    height: 88vh;
+    width: 90vw !important;
+  }
+
+  .menu-item-mobile {
+    font-size: 50px !important;
+    font-family: "Raleway", sans-serif !important;
+    margin-top: 5vh !important;
+    justify-content: center !important;
+    color: rgb(106, 140, 168) !important;
   }
 }
 
@@ -20,16 +33,12 @@
   }
 
   .MuiMenu-list {
-    height: 88vh;
     width: 100vw !important;
   }
 
   .menu-item-mobile {
     font-size: 25px !important;
-    font-family: "Raleway", sans-serif !important;
-    margin-top: 5vh !important;
     justify-content: flex-end !important;
     margin-right: 15vw !important;
-    color: rgb(106, 140, 168) !important;
   }
 }

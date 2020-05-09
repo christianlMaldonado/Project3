@@ -82,12 +82,6 @@ class SignIn extends Component {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={
-                  <Checkbox value="remember" color="rgb(97, 130, 156);" />
-                }
-                label="Remember me"
-              />
               <Button
                 onClick={this.handleFormSubmit}
                 type="submit"
