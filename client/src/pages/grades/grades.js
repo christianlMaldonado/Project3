@@ -10,6 +10,7 @@ class Grades extends Component {
     super(props);
     this.state = {
       user: undefined,
+      students: undefined,
     };
   }
 
@@ -74,6 +75,7 @@ class Grades extends Component {
                           </Row>
                         ))
                       ) : (
+                        this.state.is
                         <Row>
                           <Cell align="right">
                             <b>No Assignments</b>
