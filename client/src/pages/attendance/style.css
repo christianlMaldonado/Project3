@@ -65,5 +65,10 @@ button:focus {
   .attendance {
     margin-top: -4vh;
     margin-left: -8vw;
+    padding-top: 10vh;
+  }
+
+  .check-in {
+    margin-right: 0vw;
   }
 }
