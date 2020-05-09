@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import "./style.css";
+import logout from "../../helpers/logout";
 
 export default function Mobile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -23,7 +24,7 @@ export default function Mobile() {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <i class="fa fa-bars fa-2x"></i>
+        <i className="fa fa-bars fa-2x"></i>
       </Button>
       <Menu
         className="mobile-menu"
@@ -46,6 +47,10 @@ export default function Mobile() {
         </MenuItem>
         <MenuItem onClick={handleClose} className="menu-item-mobile">
           <a href="/virtual">Virtual</a>
+        </MenuItem>
+
+        <MenuItem onClick={logout} className="menu-item-mobile">
+          <a href="/">Sign Out</a>
         </MenuItem>
       </Menu>
     </div>

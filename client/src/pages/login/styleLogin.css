@@ -2,12 +2,14 @@
 
 .MuiAvatar-root {
   background-color: rgb(119, 147, 172) !important;
-  margin-left: 42% !important;
+  justify-content: center;
 }
 
 .submitLogin {
   background-color: rgb(119, 147, 172) !important;
   color: white !important;
+  width: 10vw !important;
+  margin-top: 5vh !important;
 }
 
 .MuiGrid-container {
@@ -76,6 +78,8 @@ button {
   color: rgb(119, 147, 172);
   font-size: 30px !important;
   font-family: "Raleway", sans-serif !important;
+  justify-content: center !important;
+  margin-right: 1vw !important;
 }
 
 .MuiTypography-colorPrimary {
@@ -103,9 +107,19 @@ button {
   }
 }
 
+@media only screen and (max-width: 770px) {
+  .submitLogin {
+    width: 11vw !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .MuiAvatar-root {
-    margin-left: 28vw !important;
+    margin-left: 31vw !important;
     margin-bottom: 2vh !important;
+  }
+
+  .submitLogin {
+    width: 22vw !important;
   }
 }
