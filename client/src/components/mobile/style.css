@@ -1,0 +1,35 @@
+.mobile-nav {
+  display: none !important;
+}
+
+@media only screen and (max-width: 1025px) {
+  .mobile-nav {
+    display: initial !important;
+    position: absolute;
+    left: 5vw;
+    z-index: 8;
+    margin-top: 4vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile-nav {
+    left: unset;
+    right: 0;
+    margin-top: 2vh;
+  }
+
+  .MuiMenu-list {
+    height: 88vh;
+    width: 100vw !important;
+  }
+
+  .menu-item-mobile {
+    font-size: 25px !important;
+    font-family: "Raleway", sans-serif !important;
+    margin-top: 5vh !important;
+    justify-content: flex-end !important;
+    margin-right: 15vw !important;
+    color: rgb(106, 140, 168) !important;
+  }
+}

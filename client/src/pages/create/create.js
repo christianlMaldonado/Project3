@@ -115,12 +115,19 @@ class Create extends Component {
               className="logo-size"
               src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
             ></img>{" "}
-            Create
+            <span className="top-title-create">Create</span>
           </div>
           <div className="container">
             <div className="create">
-              <Snackbar open={this.state.open} autoHideDuration={5000} onClose={this.handleClose}>
-                <Alert onClose={this.handleClose} severity={this.state.severity}>
+              <Snackbar
+                open={this.state.open}
+                autoHideDuration={5000}
+                onClose={this.handleClose}
+              >
+                <Alert
+                  onClose={this.handleClose}
+                  severity={this.state.severity}
+                >
                   {this.state.message}
                 </Alert>
               </Snackbar>
@@ -186,7 +193,11 @@ class Create extends Component {
                   autocomplete="off"
                 />
                 <Btn
-                  disabled={!this.state.firstName || !this.state.lastName || !this.state.password}
+                  disabled={
+                    !this.state.firstName ||
+                    !this.state.lastName ||
+                    !this.state.password
+                  }
                   onClick={this.addStudent}
                   className="create-button"
                 >
@@ -201,7 +212,9 @@ class Create extends Component {
           <div className="title">Create</div>
           <div className="container">
             <div className="create">
-              <h3>Sorry {this.state.user.name}, you don't have access to this page</h3>
+              <h3>
+                Sorry {this.state.user.name}, you don't have access to this page
+              </h3>
             </div>
           </div>
         </>

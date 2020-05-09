@@ -41,6 +41,13 @@ function Navbar() {
               </i>
             </li>
           </a>
+          <a href="/virtual">
+            <li>
+              <i className="fa fa-comments" data-hover="Virtual">
+                {isShown && <span className="addedLink"> Virtual</span>}
+              </i>
+            </li>
+          </a>
         </ul>
         <ul className="logout">
           <a href="/" onClick={logout}>

@@ -53,4 +53,15 @@ button:focus {
     margin-top: -4vh;
     margin-left: -8vw;
   }
+
+  .top-title {
+    position: absolute;
+    left: 30vw;
+    margin-top: -1vh !important;
+    font-size: 25px;
+  }
+
+  .title {
+    padding-bottom: 4vh;
+  }
 }

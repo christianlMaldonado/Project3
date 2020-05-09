@@ -70,7 +70,7 @@ class Attendance extends Component {
               className="logo-size"
               src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
             ></img>{" "}
-            Attendance
+            <span className="top-title">Attendance</span>
           </div>
           <div className="container">
             <div className="attendance">

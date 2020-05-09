@@ -95,4 +95,10 @@
   .container {
     padding-left: 30px;
   }
+
+  .top-title-home {
+    position: absolute;
+    left: 21vw;
+    margin-top: -1vh !important;
+  }
 }

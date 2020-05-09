@@ -62,9 +62,18 @@ class Assignments extends Component {
     };
     API.submitHomework(homeworkLink).then((err, res) => {
       if (err) {
-        this.setState({ message: "Retry submitting link", severity: "error", open: true });
+        this.setState({
+          message: "Retry submitting link",
+          severity: "error",
+          open: true,
+        });
       }
-      this.setState({ link: null, message: "Homework Submitted", severity: "success", open: true });
+      this.setState({
+        link: null,
+        message: "Homework Submitted",
+        severity: "success",
+        open: true,
+      });
     });
   };
 
@@ -118,13 +127,20 @@ class Assignments extends Component {
               className="logo-size"
               src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
             ></img>{" "}
-            Assignments
+            <span className="top-title">Assignments</span>
           </div>
           <div className="container">
             <div className="assignments">
               <div className="table-container">
-                <Snackbar open={this.state.open} autoHideDuration={5000} onClose={this.handleClose}>
-                  <Alert onClose={this.handleClose} severity={this.state.severity}>
+                <Snackbar
+                  open={this.state.open}
+                  autoHideDuration={5000}
+                  onClose={this.handleClose}
+                >
+                  <Alert
+                    onClose={this.handleClose}
+                    severity={this.state.severity}
+                  >
                     {this.state.message}
                   </Alert>
                 </Snackbar>
