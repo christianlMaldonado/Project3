@@ -22,7 +22,6 @@ class Assignments extends Component {
       open: false,
       severity: "",
     };
-
     this.handleClose = this.handleClose.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -230,7 +229,7 @@ class Assignments extends Component {
                                   </Cell>
                                   <Cell>
                                     <TextField
-                                      lable="grade"
+                                      label="grade"
                                       type="number"
                                       name="grade"
                                       onChange={this.handleInputChange}
