@@ -12,6 +12,7 @@ import {
 import Paper from "@material-ui/core/Paper";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
+import Loading from "../../components/loading/loading";
 
 class Attendance extends Component {
   constructor(props) {
@@ -62,13 +63,26 @@ class Attendance extends Component {
     if (this.state.user !== undefined) {
       return (
         <>
-          <div className="title">Attendance</div>
+          <div className="title">
+            {" "}
+            <img
+              alt="logo"
+              className="logo-size"
+              src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
+            ></img>{" "}
+            <span className="top-title">Attendance</span>
+          </div>
           <div className="container">
             <div className="attendance">
               <div className="table-container">
                 {this.state.user.isStudent ? (
                   !this.state.checkedIn ? (
-                    <button onClick={this.studentCheckIn}>Check In</button>
+                    <button
+                      className="check-in btn-floating pulse btn-large"
+                      onClick={this.studentCheckIn}
+                    >
+                      Check In
+                    </button>
                   ) : (
                     <h3>You are checked in already!</h3>
                   )
@@ -131,7 +145,7 @@ class Attendance extends Component {
         </>
       );
     } else {
-      return <h1>Loading</h1>;
+      return <Loading />;
     }
   }
 }

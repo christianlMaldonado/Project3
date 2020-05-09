@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import getJwt from "../../helpers/jwt";
 import API from "../../utilities/API";
-import "./style.css";
+import Loading from "../loading/loading";
 
 class Authenticated extends Component {
   constructor(props) {
@@ -23,8 +23,6 @@ class Authenticated extends Component {
         })
       )
       .catch((err) => {
-        console.log(err);
-        localStorage.removeItem("id_token");
         this.props.history.push("/");
       });
   }
@@ -33,9 +31,7 @@ class Authenticated extends Component {
     if (this.state.user === undefined) {
       return (
         <div>
-          <div className="load-screen">
-            <h1>Loading</h1>
-          </div>
+          <Loading />
         </div>
       );
     }

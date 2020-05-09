@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.52",
     "axios": "^0.18.0",
     "firebase": "^7.14.2",
     "framer-motion": "^1.10.3",
@@ -15,7 +16,9 @@
     "react-dom": "^16.6.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.1",
-    "socket.io-client": "^2.3.0"
+    "simple-peer": "^9.6.2",
+    "socket.io-client": "^2.3.0",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

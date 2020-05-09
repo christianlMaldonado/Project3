@@ -1,0 +1,102 @@
+.create {
+  background-color: rgb(191, 215, 236);
+  margin-left: -7px;
+  text-align: center;
+  margin-left: -10vw;
+  width: 85vw;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
+}
+
+.create-title {
+  width: 100%;
+  background-color: rgb(72, 106, 133);
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.create-button {
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  background-color: rgb(117, 143, 165);
+  border: 2px rgb(117, 143, 165) solid;
+  color: white;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 45%;
+  margin-left: 30%;
+}
+
+.create-button:hover {
+  background-color: rgb(161, 186, 209);
+  border: 2px rgb(161, 186, 209) solid;
+  cursor: pointer;
+}
+
+.create-input {
+  background-color: white !important;
+  margin-top: 10px !important;
+  width: 100%;
+  border: 1px lightgray solid !important;
+  padding: 2px !important;
+}
+
+.create-input:focus {
+  webkit-box-shadow: 0 1px 0 0 rgb(119, 147, 172) !important;
+  box-shadow: 0 1px 0 0 rgb(119, 147, 172) !important;
+}
+
+textarea {
+  width: 101%;
+  height: 25vh;
+  padding: 2px !important;
+  background-color: white;
+  resize: none;
+  border: 1px lightgray solid !important;
+}
+
+@media only screen and (max-width: 1025px) {
+  .create {
+    margin-top: 1vh;
+    width: 95vw;
+    margin-left: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .create {
+    margin-top: 0vh;
+    margin-left: -5.5vw;
+  }
+
+  .form-container {
+    width: 80vw;
+  }
+
+  .create-title {
+    font-size: 20px;
+  }
+
+  .create-button {
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+
+  textarea {
+    width: 81.5vw;
+  }
+
+  .top-title-create {
+    position: absolute;
+    left: 38vw;
+    margin-top: -1vh !important;
+    font-size: 25px;
+  }
+}

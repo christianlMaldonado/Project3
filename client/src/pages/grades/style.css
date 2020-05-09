@@ -1,16 +1,45 @@
 .grades {
-  background-color: rgb(226, 236, 245);
-  height: 200vh;
+  background-color: rgb(191, 215, 236);
+  height: 100%;
   text-align: center;
-  padding-top: 30px;
-  margin-top: -10px;
-  width: 100%;
+  padding-top: 10vh;
+  margin-left: -18vw;
+  width: 100vw;
+  padding-bottom: 10vh;
+  margin-top: -2vh;
 }
 
 .table-container {
   width: 80%;
-  margin-left: 12%;
+  margin-left: 12vw;
+}
+
+@media only screen and (max-width: 1025px) {
+  .grades {
+    margin-top: -5vh;
+    width: 100vw;
+    margin-left: 0vw;
+  }
+
+  .MuiTableContainer-root {
+    width: 95% !important;
+    margin-left: -1.7vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+  .grades {
+    margin-top: -4vh;
+    margin-left: -8vw;
+  }
+
+  .table-container {
+    margin-left: 3vw;
+    width: 98vw;
+  }
+
+  .MuiTableContainer-root {
+    width: 104% !important;
+    margin-left: -1.7vw;
+  }
 }

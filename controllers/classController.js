@@ -36,7 +36,6 @@ module.exports = {
         },
       }
     ).then(function (homework) {
-      console.log(homework);
       res.json({ success: true, msg: homework + " added" });
     });
   },
@@ -70,12 +69,10 @@ module.exports = {
         if (!student) {
           return res.json({ success: false, msg: "Student not found" });
         } else {
-          console.log(student.student.schoolWork);
           student.student.schoolWork.forEach((element) => {
             if (element.assignment.name === homework.assignment) {
               element.assignment.grade = homework.grade;
             }
-            console.log(student.student.schoolWork);
           });
           student.save(function (err, student) {
             res.json(student);
@@ -89,7 +86,6 @@ module.exports = {
       username: req.body.name,
       present: true,
     };
-    // console.log(req.body.date);
     User.findOneAndUpdate(
       { username: isPresent.username },
       { $push: { "student.attendance": { isPresent: isPresent.present } } },
@@ -105,8 +101,30 @@ module.exports = {
   checkAttendance: function (req, res) {
     User.find({ isStudent: true }, (err, students) => {
       if (err) throw err;
-      console.log(students);
       res.json(students);
     });
+  },
+  submitLink: function (req, res) {
+    User.findOneAndUpdate(
+      { _id: req.body.user._id },
+      { $set: { "student.schoolWork.$[elem]._id": req.body.id } },
+      { arrayFilters: [{ "elem._id": { $eq: req.body.id } }] },
+      (err, doc) => {
+        if (err) throw err;
+        if (!doc) {
+          return res.json({ success: false, msg: "Homework not found" });
+        } else {
+          doc.student.schoolWork.forEach((i) => {
+            if (i._id == req.body.id) {
+              i.assignment.link = req.body.link;
+            }
+          });
+          doc.save((err, doc) => {
+            if (err) throw err;
+            res.json({ success: true, msg: "Homework updated" });
+          });
+        }
+      }
+    );
   },
 };

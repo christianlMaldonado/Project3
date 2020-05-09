@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
 .MuiAvatar-root {
   background-color: rgb(119, 147, 172) !important;
+  margin-left: 42% !important;
 }
 
 .submitLogin {
@@ -7,37 +10,40 @@
   color: white !important;
 }
 
-.MuiAvatar-root {
-  margin-left: 45%;
-  margin-top: 25vh;
-  margin-bottom: 2%;
-}
-
 .MuiGrid-container {
   margin-top: 2%;
   display: block !important;
 }
 
+.loginContainer {
+  width: 40% !important;
+  float: right;
+  margin-right: 5vw !important;
+  font-family: "Raleway", sans-serif !important;
+}
+
+input {
+  font-family: "Raleway", sans-serif;
+}
+
 input[type="text"]:not(.browser-default):focus:not([read-only]) {
   border-bottom: 2px solid rgb(119, 147, 172) !important;
   box-shadow: none !important;
+  font-family: "Raleway", sans-serif;
 }
 
 input[type="text"]:not(.browser-default) {
   border-color: lightgray !important;
+  font-family: "Raleway", sans-serif;
 }
 
-input[type="password"]:not(.browser-default):focus:not([read-only]) {
-  border-bottom: 2px solid rgb(119, 147, 172) !important;
-  box-shadow: none !important;
-}
-
-input[type="password"]:not(.browser-default) {
-  border-color: lightgray !important;
+button {
+  font-family: "Raleway", sans-serif !important;
 }
 
 .MuiFormLabel-root.Mui-focused {
   color: rgb(119, 147, 172) !important;
+  font-family: "Raleway", sans-serif;
 }
 
 .MuiInput-underline:before {
@@ -54,4 +60,52 @@ input[type="password"]:not(.browser-default) {
 
 .MuiInput-underline:hover:not(.Mui-disabled):before {
   border-bottom: none !important;
+}
+
+.login-image {
+  float: left;
+  width: 48.8vw;
+  height: 100vh !important;
+}
+
+.MuiTypography-h5 {
+  margin-right: 35px !important;
+}
+
+.formHead {
+  color: rgb(119, 147, 172);
+  font-size: 30px !important;
+  font-family: "Raleway", sans-serif !important;
+}
+
+.MuiTypography-colorPrimary {
+  color: rgb(119, 147, 172) !important;
+}
+
+@media only screen and (max-width: 1025px) {
+  .login-image {
+    display: none;
+  }
+
+  .loginContainer {
+    float: none !important;
+    width: 80% !important;
+    margin-right: 10vw !important;
+  }
+
+  .MuiAvatar-root {
+    margin-left: 34vw !important;
+  }
+
+  .formHead {
+    margin-bottom: 10vh !important;
+    font-size: 50px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .MuiAvatar-root {
+    margin-left: 28vw !important;
+    margin-bottom: 2vh !important;
+  }
 }

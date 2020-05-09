@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-// import { auth } from "../../services/firebase";
+import API from "../../utilities/API";
 import { db } from "../../services/firebase";
+import getJwt from "../../helpers/jwt";
 import "./style.css";
+import { withRouter } from "react-router-dom";
 
-export default class Chat extends Component {
+class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //user: auth().currentUser, >>>> This is original code
-      user: "Matt",
+      user: undefined,
       chats: [],
       content: "",
       readError: null,
@@ -21,7 +22,22 @@ export default class Chat extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ readError: null, loadingChats: true });
+    const jwt = getJwt();
+    if (!jwt) {
+      this.props.history.push("/");
+    }
+    API.userPortal(jwt)
+      .then((res) =>
+        this.setState({
+          user: res.data.user.username,
+          readError: null,
+          loadingChats: true,
+        })
+      )
+      .catch((err) => {
+        this.props.history.push("/");
+      });
+
     const chatArea = this.myRef.current;
     try {
       db.ref("chats").on("value", (snapshot) => {
@@ -74,47 +90,62 @@ export default class Chat extends Component {
 
   render() {
     return (
-      <div className="chat-container">
-        <div className="chat-area" ref={this.myRef}>
-          {/* loading indicator */}
-          {this.state.loadingChats ? (
-            <div className="spinner-border text-success" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          ) : (
-            ""
-          )}
-          {/* chat area */}
-          {this.state.chats.map((chat) => {
-            return (
-              <p
-                key={chat.timestamp}
-                className={"chat-bubble " + (this.state.user === chat.uid ? "current-user" : "")}
-              >
-                {chat.uid} {" : "}
-                {chat.content}
-                <br />
-                <span className="chat-time float-right">{this.formatTime(chat.timestamp)}</span>
-              </p>
-            );
-          })}
+      <>
+        <div className="chat-container">
+          <div className="chat-area" ref={this.myRef}>
+            {/* loading indicator */}
+            {this.state.loadingChats ? (
+              <div className="spinner-border text-success" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            ) : (
+              ""
+            )}
+            {/* chat area */}
+            {this.state.chats.map((chat) => {
+              return (
+                <p
+                  key={chat.timestamp}
+                  className={
+                    "chat-bubble " +
+                    (this.state.user === chat.uid ? "current-user" : "")
+                  }
+                >
+                  {chat.uid} {" : "}
+                  {chat.content}
+                  <br />
+                  <span className="chat-time float-right">
+                    {this.formatTime(chat.timestamp)}
+                  </span>
+                </p>
+              );
+            })}
+          </div>
+          <form onSubmit={this.handleSubmit} className="mx-3">
+            <textarea
+              className="form-control"
+              name="content"
+              onChange={this.handleChange}
+              value={this.state.content}
+            ></textarea>
+            {this.state.error ? (
+              <p className="text-danger">{this.state.error}</p>
+            ) : null}
+            <button
+              type="submit"
+              className="btn btn-submit px-5 mt-4 chat-submit"
+            >
+              Send
+            </button>
+          </form>
+          <div className="py-5 mx-3">
+            Logged in as:{" "}
+            <strong className="text-info">{this.state.user}</strong>
+          </div>
         </div>
-        <form onSubmit={this.handleSubmit} className="mx-3">
-          <textarea
-            className="form-control"
-            name="content"
-            onChange={this.handleChange}
-            value={this.state.content}
-          ></textarea>
-          {this.state.error ? <p className="text-danger">{this.state.error}</p> : null}
-          <button type="submit" className="btn btn-submit px-5 mt-4 chat-submit">
-            Send
-          </button>
-        </form>
-        <div className="py-5 mx-3">
-          Logged in as: <strong className="text-info">{this.state.user}</strong>
-        </div>
-      </div>
+      </>
     );
   }
 }
+
+export default withRouter(Chat);

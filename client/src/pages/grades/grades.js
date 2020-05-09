@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Container, Tbl, TBody, Row, Header, Cell } from "../../components/tables/index";
+import {
+  Container,
+  Tbl,
+  TBody,
+  Row,
+  Header,
+  Cell,
+} from "../../components/tables/index";
 import Paper from "@material-ui/core/Paper";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
+import Loading from "../../components/loading/loading";
 
 class Grades extends Component {
   constructor(props) {
@@ -39,7 +47,15 @@ class Grades extends Component {
     if (this.state.user !== undefined) {
       return (
         <>
-          <div className="title">Grades</div>
+          <div className="title">
+            {" "}
+            <img
+              alt="logo"
+              className="logo-size"
+              src={process.env.PUBLIC_URL + "/images/ramLogo.png"}
+            ></img>{" "}
+            <span className="top-title-create">Assignments</span>
+          </div>
           <div className="container">
             <div className="grades">
               <div className="table-container">
@@ -91,7 +107,7 @@ class Grades extends Component {
         </>
       );
     } else {
-      return <h1>state not loading</h1>;
+      return <Loading />;
     }
   }
 }

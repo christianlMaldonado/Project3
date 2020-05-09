@@ -1,17 +1,18 @@
 .chat-container {
-  position: absolute;
+  position: relative;
   margin-left: 15%;
   width: 85%;
   bottom: 0px;
-  margin-bottom: 20px;
+  margin-top: 5vh;
 }
 
-textarea {
+.form-control {
   resize: none !important;
-  width: 80%;
+  width: 79.5%;
   margin-right: 10px;
   background-color: white;
   height: 35px;
+  padding-top: 6px !important;
 }
 
 .chat-submit {
@@ -29,7 +30,7 @@ textarea {
 
 .chat-area {
   background-color: rgb(255, 255, 255);
-  width: 85%;
+  width: 87%;
   max-height: 200px;
   height: 100px;
   overflow: auto;
@@ -49,4 +50,65 @@ textarea {
 .chat-area::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: rgb(102, 134, 160);
+}
+
+@media only screen and (max-width: 1025px) {
+  .chat-container {
+    margin-top: 13vw;
+    width: 85vw;
+    text-align: center;
+    margin-left: 11vw;
+  }
+
+  .chat-submit {
+    width: 70px;
+    margin-top: 10px;
+    margin-right: 9vw;
+  }
+
+  .chat-area {
+    text-align: left !important;
+    padding-left: 8px;
+    width: 90%;
+  }
+
+  .form-control {
+    width: 90%;
+    margin-right: 10vw;
+  }
+
+  .py-5 {
+    margin-top: 10px !important;
+    margin-right: 10vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .chat-container {
+    width: 85vw;
+    text-align: center;
+    margin-left: 14vw;
+  }
+
+  .chat-submit {
+    width: 70px;
+    margin-top: 10px;
+    margin-right: 9vw;
+  }
+
+  .chat-area {
+    text-align: left !important;
+    padding-left: 8px;
+    width: 90%;
+  }
+
+  .form-control {
+    width: 90%;
+    margin-right: 54px;
+  }
+
+  .py-5 {
+    margin-top: 10px !important;
+    margin-right: 10vw;
+  }
 }

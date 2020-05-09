@@ -43,89 +43,99 @@ class Register extends Component {
 
   render() {
     return (
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className="center">
-          <Avatar className="color">
-            <AccountCircleIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <form noValidate className="center">
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  onChange={this.handleInputChange}
-                  autoComplete="fname"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  onChange={this.handleInputChange}
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  onChange={this.handleInputChange}
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  onChange={this.handleInputChange}
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                />
-              </Grid>
-            </Grid>
-            <Button
-              onClick={this.handleFormSubmit}
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className="submitLogin"
-            >
-              Sign Up
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <div className="signUp">
-                  <Link href="/" variant="body2">
-                    {"Already have an account? Sign In."}
-                  </Link>
-                </div>
-              </Grid>
-            </Grid>
-          </form>
+      <>
+        <div className="image-container">
+          <img
+            className="login-image"
+            alt="login"
+            src={process.env.PUBLIC_URL + "/images/register.jpg"}
+          ></img>
         </div>
-        <Box mt={5}>
-          <Copyright />
-        </Box>
-      </Container>
+        <Container component="main" className="loginContainer">
+          <CssBaseline />
+          <div className="center">
+            <Avatar className="color">
+              <AccountCircleIcon />
+            </Avatar>
+            <Typography className="formHead" component="h1" variant="h5">
+              Sign Up
+            </Typography>
+            <form noValidate className="center">
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    onChange={this.handleInputChange}
+                    autoComplete="fname"
+                    name="firstName"
+                    required
+                    fullWidth
+                    id="firstName"
+                    label="First Name"
+                    autoFocus
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    onChange={this.handleInputChange}
+                    required
+                    fullWidth
+                    id="lastName"
+                    label="Last Name"
+                    name="lastName"
+                    autoComplete="lname"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    onChange={this.handleInputChange}
+                    required
+                    fullWidth
+                    id="email"
+                    type="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="false"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    onChange={this.handleInputChange}
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="false"
+                  />
+                </Grid>
+              </Grid>
+              <Button
+                onClick={this.handleFormSubmit}
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className="submitLogin"
+              >
+                Sign Up
+              </Button>
+              <Grid container justify="flex-end">
+                <Grid item>
+                  <div className="signUp">
+                    <Link href="/" variant="body2">
+                      {"Already have an account? Sign In."}
+                    </Link>
+                  </div>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+          <Box mt={5}>
+            <Copyright />
+          </Box>
+        </Container>
+      </>
     );
   }
 }

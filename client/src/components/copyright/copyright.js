@@ -5,7 +5,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      "Website Name Here" {new Date().getFullYear()}
+      Bit Academy {new Date().getFullYear()}
       {"."}
     </Typography>
   );

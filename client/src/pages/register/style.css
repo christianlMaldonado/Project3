@@ -20,19 +20,35 @@
 input[type="text"]:not(.browser-default):focus:not([read-only]) {
   border-bottom: 2px solid rgb(119, 147, 172) !important;
   box-shadow: none !important;
+  font-family: "Raleway", sans-serif;
 }
 
 input[type="text"]:not(.browser-default) {
   border-color: lightgray !important;
+  width: 100% !important;
+  font-family: "Raleway", sans-serif;
 }
 
 input[type="password"]:not(.browser-default):focus:not([read-only]) {
   border-bottom: 2px solid rgb(119, 147, 172) !important;
   box-shadow: none !important;
+  font-family: "Raleway", sans-serif;
 }
 
 input[type="password"]:not(.browser-default) {
   border-color: lightgray !important;
+  font-family: "Raleway", sans-serif;
+}
+
+input[type="email"]:not(.browser-default):focus:not([read-only]) {
+  border-bottom: 2px solid rgb(119, 147, 172) !important;
+  box-shadow: none !important;
+  font-family: "Raleway", sans-serif;
+}
+
+input[type="email"]:not(.browser-default) {
+  border-color: lightgray !important;
+  font-family: "Raleway", sans-serif !important;
 }
 
 .MuiFormLabel-root.Mui-focused {
@@ -53,4 +69,13 @@ input[type="password"]:not(.browser-default) {
 
 .MuiInput-underline:hover:not(.Mui-disabled):before {
   border-bottom: none !important;
+}
+
+.MuiContainer-root {
+  margin-top: -60px;
+}
+
+.MuiGrid-spacing-xs-2 > .MuiGrid-item {
+  padding: 8px;
+  max-width: 100% !important;
 }

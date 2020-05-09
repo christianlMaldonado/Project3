@@ -1,15 +1,17 @@
 .attendance {
-  background-color: rgb(226, 236, 245);
-  height: 200vh;
+  background-color: rgb(191, 215, 236);
+  height: 100%;
   text-align: center;
   padding-top: 30px;
-  margin-top: -10px;
-  width: 100%;
+  margin-left: -18vw;
+  width: 100vw;
+  padding-bottom: 10vh;
+  margin-top: -2vh;
 }
 
 .take-attendance {
   padding: 6px 16px;
-  font-size: 0.875rem;
+  font-size: 12px;
   min-width: 64px;
   box-sizing: border-box;
   background-color: rgb(117, 143, 165);
@@ -20,16 +22,48 @@
   border-radius: 4px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  float: right;
 }
 
 .take-attendance:hover {
   background-color: rgb(161, 186, 209);
   border: 2px rgb(161, 186, 209) solid;
+  cursor: pointer;
+}
+
+.check-in {
+  font-size: 12px;
+  width: 115px !important;
+  background-color: rgb(117, 143, 165);
+  border: 2px rgb(117, 143, 165) solid;
+  color: white;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-right: 100px;
+}
+
+.check-in:hover {
+  background-color: rgb(161, 186, 209);
+  border: 2px rgb(161, 186, 209) solid;
+  cursor: pointer;
 }
 
 button:focus {
-  background-color: rgba(117, 143, 165) !important;
+  background-color: rgb(161, 186, 209) !important;
+  border: 2px rgb(161, 186, 209) !important;
+}
+
+@media only screen and (max-width: 1025px) {
+  .attendance {
+    margin-top: -4.2vh;
+    width: 100vw;
+    margin-left: 0vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+  .attendance {
+    margin-top: -4vh;
+    margin-left: -8vw;
+  }
 }

@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Authenticated from "./components/Authenticated";
 import Navbar from "./components/navbar/navbar";
 import Home from "./pages/home/home";
@@ -9,8 +14,9 @@ import Assignments from "./pages/assignments/assignments";
 import Virtual from "./pages/virtual/virtual";
 import Create from "./pages/create/create";
 import Login from "./pages/login/login";
-import studentHome from "./pages/stuHome/Home";
 import Register from "./pages/register/register";
+import NoMatch from "./pages/404/404";
+import Mobile from "./components/mobile/mobile";
 import "./App.css";
 
 function App() {
@@ -25,6 +31,7 @@ function App() {
     <>
       <div>
         <Navbar />
+        <Mobile />
       </div>
       <Route exact path="/home" component={Home} />
       <Route exact path="/grades" component={Grades} />
@@ -32,7 +39,6 @@ function App() {
       <Route exact path="/assignments" component={Assignments} />
       <Route exact path="/create" component={Create} />
       <Route exact path="/virtual" component={Virtual} />
-      <Route exact path="/student-home" component={studentHome} />
     </>
   );
 
@@ -46,7 +52,8 @@ function App() {
             <Authenticated>
               <Route component={Default} />
             </Authenticated>
-            {/* <Route component={NoMatch} /> */}
+            {/* this right here, this leads to the 404 page */}
+            <Route component={NoMatch} />
           </Switch>
         </div>
       </Router>

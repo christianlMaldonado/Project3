@@ -1,11 +1,67 @@
 .assignments {
-  background-color: rgb(226, 236, 245);
-  height: 200vh;
+  background-color: rgb(191, 215, 236);
+  height: 100%;
   text-align: center;
   padding-top: 30px;
-  margin-top: -10px;
-  width: 100%;
+  padding-bottom: 10vh;
+  margin-left: -18vw;
+  width: 100vw;
+  margin-top: -2vh;
+}
+
+.see-assignments {
+  padding: 6px 16px;
+  font-size: 12px;
+  min-width: 64px;
+  box-sizing: border-box;
+  background-color: rgb(117, 143, 165) !important;
+  border: 2px rgb(117, 143, 165) solid !important;
+  color: white;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+  float: right;
+}
+
+.see-assignments:hover {
+  background-color: rgb(161, 186, 209) !important;
+  border: 2px rgb(161, 186, 209) solid !important;
+  cursor: pointer;
+}
+
+button:focus {
+  background-color: rgb(161, 186, 209) !important;
+  border: 2px rgb(161, 186, 209) !important;
+}
+
+@media only screen and (max-width: 1025px) {
+  .assignments {
+    margin-top: -4.2vh;
+    width: 100vw;
+    margin-left: 0vw;
+  }
+
+  .table-container {
+    width: 90vw;
+    margin-left: 5vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+  .assignments {
+    margin-top: -4vh;
+    margin-left: -8vw;
+  }
+
+  .top-title {
+    position: absolute;
+    left: 30vw;
+    margin-top: -1vh !important;
+    font-size: 25px;
+  }
+
+  .title {
+    padding-bottom: 4vh;
+  }
 }

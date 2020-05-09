@@ -1,0 +1,39 @@
+.noMatch {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background-color: rgb(106, 140, 168);
+  font-size: 60px;
+  padding-top: 40vh;
+  color: white;
+}
+
+.noMatch:after {
+  content: " .";
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: white;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .noMatch {
+    font-size: 30px;
+  }
+}

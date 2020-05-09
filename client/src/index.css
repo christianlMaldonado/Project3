@@ -1,13 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Raleway", sans-serif;
+  background-color: rgb(234, 242, 248);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.ktLOBU {
+  border: 0px solid rgb(27, 27, 139, 0) !important;
+  width: 40vw !important;
+  height: 40vh !important;
+  /* margin-top: 20vh !important;
+  margin-left: 30vw;
+  margin-bottom: 10vh; */
+}
+
+.form {
+  font-family: "Raleway", sans-serif !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1.5vw;
+  background-color: #f5f5f5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgb(56, 83, 105);
+}
+
+@media only screen and (max-width: 600px) {
+  .ktLOBU {
+    margin-top: 5vh !important;
+    width: 50vw !important;
+    height: 50vh !important;
+    margin-left: 25% !important;
+  }
 }

@@ -30,76 +30,89 @@ class SignIn extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    API.login({ email: this.state.email, password: this.state.password }).then((response) => {
-      let tokenArr = response.data.token.split(" ");
-      const token = tokenArr.pop().toString();
-      localStorage.setItem("id_token", token);
-      this.props.history.push("/home");
-    });
+    API.login({ email: this.state.email, password: this.state.password }).then(
+      (response) => {
+        let tokenArr = response.data.token.split(" ");
+        const token = tokenArr.pop().toString();
+        localStorage.setItem("id_token", token);
+        this.props.history.push("/home");
+      }
+    );
   };
 
   render() {
     return (
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className="center">
-          <Avatar className="color">
-            <AccountCircleIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign In
-          </Typography>
-          <form noValidate>
-            <TextField
-              onChange={this.handleInputChange}
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              onChange={this.handleInputChange}
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="rgb(97, 130, 156);" />}
-              label="Remember me"
-            />
-            <Button
-              onClick={this.handleFormSubmit}
-              type="submit"
-              fullWidth
-              variant="contained"
-              className="submitLogin"
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item>
-                <div className="signUp">
-                  <Link href="/register" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </div>
-              </Grid>
-            </Grid>
-          </form>
+      <>
+        <div className="image-container">
+          <img
+            className="login-image"
+            alt="login"
+            src={process.env.PUBLIC_URL + "/images/login.jpg"}
+          ></img>
         </div>
-        <Box mt={8}>
-          <Copyright />
-        </Box>
-      </Container>
+        <Container component="main" className="loginContainer">
+          <CssBaseline />
+          <div className="center">
+            <Avatar className="color">
+              <AccountCircleIcon />
+            </Avatar>
+            <Typography className="formHead" component="h1" variant="h5">
+              Sign In
+            </Typography>
+            <form noValidate>
+              <TextField
+                onChange={this.handleInputChange}
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                onChange={this.handleInputChange}
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox value="remember" color="rgb(97, 130, 156);" />
+                }
+                label="Remember me"
+              />
+              <Button
+                onClick={this.handleFormSubmit}
+                type="submit"
+                fullWidth
+                variant="contained"
+                className="submitLogin"
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item>
+                  <div className="signUp">
+                    <Link href="/register" variant="body2">
+                      {"Don't have an account? Sign Up"}
+                    </Link>
+                  </div>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+          <Box mt={8}>
+            <Copyright />
+          </Box>
+        </Container>
+      </>
     );
   }
 }
