@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
-import {
-  Container,
-  Tbl,
-  TBody,
-  Row,
-  Header,
-  Cell,
-} from "../../components/tables/index";
+import { Container, Tbl, TBody, Row, Header, Cell } from "../../components/tables/index";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
 import Loading from "../../components/loading/loading";
@@ -18,7 +12,9 @@ class Grades extends Component {
     super(props);
     this.state = {
       user: undefined,
+      students: undefined,
     };
+    this.getAssignments = this.getAssignments.bind(this);
   }
 
   componentDidMount() {
@@ -33,13 +29,16 @@ class Grades extends Component {
         });
       })
       .catch((err) => {
-        // localStorage.removeItem("id_token");
         this.props.history.push("/");
       });
   }
 
   getAssignments = () => {
-    API.getHomework();
+    API.takeAttendance().then((res) => {
+      this.setState({
+        students: res.data,
+      });
+    });
   };
 
   render() {
@@ -58,25 +57,25 @@ class Grades extends Component {
           <div className="container">
             <div className="grades">
               <div className="table-container">
-                <Container component={Paper}>
-                  <Tbl>
-                    <Header>
-                      <Row>
-                        <Cell>
-                          <b>Assignment</b>
-                        </Cell>
-                        <Cell align="right">
-                          <b>Link</b>
-                        </Cell>
-                        <Cell align="right">
-                          <b>Grade</b>
-                        </Cell>
-                      </Row>
-                    </Header>
+                {this.state.user.isStudent ? (
+                  <Container component={Paper}>
+                    <Tbl>
+                      <Header>
+                        <Row>
+                          <Cell>
+                            <b>Assignment</b>
+                          </Cell>
+                          <Cell align="right">
+                            <b>Link</b>
+                          </Cell>
+                          <Cell align="right">
+                            <b>Grade</b>
+                          </Cell>
+                        </Row>
+                      </Header>
 
-                    <TBody>
-                      {this.state.user.isStudent ? (
-                        this.state.user.student.schoolWork.map((homework) => (
+                      <TBody>
+                        {this.state.user.student.schoolWork.map((homework) => (
                           <Row key={homework.assignment._id}>
                             <Cell key={homework.assignment.name}>
                               <b>{homework.assignment.name}</b>
@@ -88,17 +87,67 @@ class Grades extends Component {
                               <b>{homework.assignment.grade}</b>
                             </Cell>
                           </Row>
-                        ))
-                      ) : (
-                        <Row>
-                          <Cell align="right">
-                            <b>No Assignments</b>
-                          </Cell>
-                        </Row>
-                      )}
-                    </TBody>
-                  </Tbl>
-                </Container>
+                        ))}
+                      </TBody>
+                    </Tbl>
+                  </Container>
+                ) : (
+                  <>
+                    <Button
+                      className="see-assignments"
+                      variant="contained"
+                      color="primary"
+                      onClick={this.getAssignments}
+                      style={{ marginBottom: "40px" }}
+                    >
+                      See Grades
+                    </Button>
+                    <Container component={Paper}>
+                      <Tbl>
+                        <Header>
+                          <Row>
+                            <Cell>
+                              <b>Student</b>
+                            </Cell>
+                            <Cell>
+                              <b>Assignment</b>
+                            </Cell>
+                            <Cell align="right">
+                              <b>Link</b>
+                            </Cell>
+                            <Cell align="right">
+                              <b>Grade</b>
+                            </Cell>
+                          </Row>
+                        </Header>
+                        <TBody>
+                          {this.state.students ? (
+                            this.state.students.map((student) => {
+                              return student.student.schoolWork.map((assignment) => (
+                                <Row key={Math.floor(Math.random() * 100000)}>
+                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                    <b>{student.name}</b>
+                                  </Cell>
+                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                    <b>{assignment.assignment.name}</b>
+                                  </Cell>
+                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                    <b>{assignment.assignment.link}</b>
+                                  </Cell>
+                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                    <b>{assignment.assignment.grade}</b>
+                                  </Cell>
+                                </Row>
+                              ));
+                            })
+                          ) : (
+                            <Row></Row>
+                          )}
+                        </TBody>
+                      </Tbl>
+                    </Container>
+                  </>
+                )}
               </div>
             </div>
           </div>

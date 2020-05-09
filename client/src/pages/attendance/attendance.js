@@ -1,14 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 // import { Form, Btn } from "../../components/Form";
-import {
-  Container,
-  Tbl,
-  TBody,
-  Row,
-  Header,
-  Cell,
-} from "../../components/tables/index";
+import { Container, Tbl, TBody, Row, Header, Cell } from "../../components/tables/index";
 import Paper from "@material-ui/core/Paper";
 import API from "../../utilities/API";
 import getJwt from "../../helpers/jwt";
@@ -22,6 +15,8 @@ class Attendance extends Component {
       students: undefined,
       checkedIn: undefined,
     };
+    this.studentCheckIn = this.studentCheckIn.bind(this);
+    this.takeAttendance = this.takeAttendance.bind(this);
   }
   componentDidMount() {
     const jwt = getJwt();
@@ -88,10 +83,7 @@ class Attendance extends Component {
                   )
                 ) : (
                   <>
-                    <button
-                      onClick={this.takeAttendance}
-                      className="take-attendance"
-                    >
+                    <button onClick={this.takeAttendance} className="take-attendance">
                       {" "}
                       Take Attendance
                     </button>
@@ -116,13 +108,9 @@ class Attendance extends Component {
                                 </Cell>
                                 <Cell key={student.name} align="right">
                                   <b>
-                                    {student.student.attendance.map(
-                                      (present) => (
-                                        <p key={present._id}>
-                                          {present.attendance.date}
-                                        </p>
-                                      )
-                                    )}
+                                    {student.student.attendance.map((present) => (
+                                      <p key={present._id}>{present.attendance.date}</p>
+                                    ))}
                                   </b>
                                 </Cell>
                               </Row>

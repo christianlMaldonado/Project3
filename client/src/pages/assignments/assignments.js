@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import {
-  Container,
-  Tbl,
-  TBody,
-  Row,
-  Header,
-  Cell,
-} from "../../components/tables/index";
+import { Container, Tbl, TBody, Row, Header, Cell } from "../../components/tables/index";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -29,6 +22,12 @@ class Assignments extends Component {
       open: false,
       severity: "",
     };
+
+    this.handleClose = this.handleClose.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.seeAssignments = this.seeAssignments.bind(this);
+    this.submitGrade = this.submitGrade.bind(this);
   }
 
   componentDidMount() {
@@ -132,15 +131,8 @@ class Assignments extends Component {
           <div className="container">
             <div className="assignments">
               <div className="table-container">
-                <Snackbar
-                  open={this.state.open}
-                  autoHideDuration={5000}
-                  onClose={this.handleClose}
-                >
-                  <Alert
-                    onClose={this.handleClose}
-                    severity={this.state.severity}
-                  >
+                <Snackbar open={this.state.open} autoHideDuration={5000} onClose={this.handleClose}>
+                  <Alert onClose={this.handleClose} severity={this.state.severity}>
                     {this.state.message}
                   </Alert>
                 </Snackbar>
@@ -185,10 +177,7 @@ class Assignments extends Component {
                                 Link
                               </Button>
                             </Cell>
-                            <Cell
-                              align="right"
-                              key={homework.assignment.description}
-                            >
+                            <Cell align="right" key={homework.assignment.description}>
                               <b>{homework.assignment.description}</b>
                             </Cell>
                           </Row>
@@ -228,47 +217,38 @@ class Assignments extends Component {
                         <TBody>
                           {this.state.students ? (
                             this.state.students.map((student) => {
-                              return student.student.schoolWork.map(
-                                (assignment) => (
-                                  <Row key={Math.floor(Math.random() * 100000)}>
-                                    <Cell
-                                      key={Math.floor(Math.random() * 100000)}
+                              return student.student.schoolWork.map((assignment) => (
+                                <Row key={Math.floor(Math.random() * 100000)}>
+                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                    <b>{student.name}</b>
+                                  </Cell>
+                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                    <b>{assignment.assignment.name}</b>
+                                  </Cell>
+                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                    <b>{assignment.assignment.link}</b>
+                                  </Cell>
+                                  <Cell>
+                                    <TextField
+                                      lable="grade"
+                                      type="number"
+                                      name="grade"
+                                      onChange={this.handleInputChange}
+                                    />
+                                    <Button
+                                      variant="outlined"
+                                      onClick={() =>
+                                        this.submitGrade({
+                                          username: student.username,
+                                          assignment: assignment.assignment.name,
+                                        })
+                                      }
                                     >
-                                      <b>{student.name}</b>
-                                    </Cell>
-                                    <Cell
-                                      key={Math.floor(Math.random() * 100000)}
-                                    >
-                                      <b>{assignment.assignment.name}</b>
-                                    </Cell>
-                                    <Cell
-                                      key={Math.floor(Math.random() * 100000)}
-                                    >
-                                      <b>{assignment.assignment.link}</b>
-                                    </Cell>
-                                    <Cell>
-                                      <TextField
-                                        lable="grade"
-                                        type="number"
-                                        name="grade"
-                                        onChange={this.handleInputChange}
-                                      />
-                                      <Button
-                                        variant="outlined"
-                                        onClick={() =>
-                                          this.submitGrade({
-                                            username: student.username,
-                                            assignment:
-                                              assignment.assignment.name,
-                                          })
-                                        }
-                                      >
-                                        Submit Grade
-                                      </Button>
-                                    </Cell>
-                                  </Row>
-                                )
-                              );
+                                      Submit Grade
+                                    </Button>
+                                  </Cell>
+                                </Row>
+                              ));
                             })
                           ) : (
                             <Row></Row>

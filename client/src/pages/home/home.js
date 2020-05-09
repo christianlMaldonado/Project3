@@ -32,7 +32,7 @@ class Home extends Component {
     let topTitle;
     if (this.state.user !== undefined) {
       topTitle = topTitle = (
-        <span className="top-title-home"> Welcome, {this.state.user.name} </span>
+        <span className="top-title-home"> Welcome, {this.state.user.username} </span>
       );
       return (
         <div className="home">
