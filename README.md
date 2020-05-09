@@ -2,14 +2,12 @@
 
 <p style="font-style: italic; text-align: center; font-size: 10px;">Group Project 3</p>
 
-<div style="justify-content: center; background-color: gray;">
-
-    <img src="./client/public/images/virtualPage.png">
+    ![](/client/public/images/virtualPage.png)
+    ![](./client/public/images/virtualPage.png)
+    <img src="/client/public/images/virtualPage.png">
     <img src="./client/public/images/homePageMobile.png">
     <img src="./client/public/images/homePageMobile.png">
     <img src="./client/public/images/createMobile.png">
-
-</div>
 
 <h5 style="text-align: center;">An app for students and teachers to connect!</h5>
 
