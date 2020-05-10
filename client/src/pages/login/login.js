@@ -3,8 +3,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -30,14 +28,12 @@ class SignIn extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    API.login({ email: this.state.email, password: this.state.password }).then(
-      (response) => {
-        let tokenArr = response.data.token.split(" ");
-        const token = tokenArr.pop().toString();
-        localStorage.setItem("id_token", token);
-        this.props.history.push("/home");
-      }
-    );
+    API.login({ email: this.state.email, password: this.state.password }).then((response) => {
+      let tokenArr = response.data.token.split(" ");
+      const token = tokenArr.pop().toString();
+      localStorage.setItem("id_token", token);
+      this.props.history.push("/home");
+    });
   };
 
   render() {
