@@ -13,7 +13,6 @@ class Grades extends Component {
     this.state = {
       user: undefined,
       students: undefined,
-      //teacher: undefined,
     };
     this.seeGrades = this.seeGrades.bind(this);
   }
@@ -25,11 +24,9 @@ class Grades extends Component {
     }
     API.userPortal(jwt)
       .then((res) => {
-        console.log(res);
         this.setState({
           user: res.data.user,
         });
-        console.log(this.state.user);
       })
       .catch((err) => {
         localStorage.removeItem("id_token");
@@ -70,7 +67,7 @@ class Grades extends Component {
                           <Cell>
                             <b>Assignment</b>
                           </Cell>
-                          <Cell align="right">
+                          <Cell>
                             <b>Link</b>
                           </Cell>
                           <Cell align="right">
@@ -116,7 +113,7 @@ class Grades extends Component {
                             <Cell>
                               <b>Assignment</b>
                             </Cell>
-                            <Cell align="right">
+                            <Cell>
                               <b>Link</b>
                             </Cell>
                             <Cell align="right">
@@ -138,7 +135,7 @@ class Grades extends Component {
                                   <Cell key={Math.floor(Math.random() * 100000)}>
                                     <b>{assignment.assignment.link}</b>
                                   </Cell>
-                                  <Cell key={Math.floor(Math.random() * 100000)}>
+                                  <Cell key={Math.floor(Math.random() * 100000)} align="right">
                                     <b>{assignment.assignment.grade}</b>
                                   </Cell>
                                 </Row>
