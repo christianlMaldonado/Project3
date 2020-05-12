@@ -38,12 +38,11 @@ Version 1.0 is up and running
 <img src="./client/public/images/bit_walkthrough1.gif">
 <img src="./client/public/images/bit_walkthrough2.gif">
 <img src="./client/public/images/bit_walkthrough3.gif">
+<img src="./client/public/images/createMobile.png">
+<img src="./client/public/images/homePageMobile.png">
+<img src="./client/public/images/virtualPage.png">
+<img src="./client/public/images/homePage.png">
 </p>
-
-![Create Assignment](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/createMobile.png)
-![Home Page Mobile](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePageMobile.png)
-![Virtual Page](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/virtualPage.png)
-![Home Page Desktop](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePage.png)
 
 ## Authors
 
