@@ -18,6 +18,7 @@ Version 1.0 is up and running
 
 * Video chat available for all users in one room
 * Direct messages between teachers/students and students/students
+* Upload, Delete custom profile pictures
 
 
 ## Built With
@@ -33,14 +34,10 @@ Version 1.0 is up and running
 * [MaLab](https://mlab.com/) - Database-as-a-service
 
 ## Demonstration
-![Create Assignment](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/createMobile.png) - Mobile
-![Home Page Mobile](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePageMobile.png) - Mobile
-![Virtual Page](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/virtualPage.png) - Desktop
-![Home Page Desktop](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePage.png) - Desktop
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-
-
-
+![Create Assignment](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/createMobile.png) 
+![Home Page Mobile](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePageMobile.png) 
+![Virtual Page](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/virtualPage.png) 
+![Home Page Desktop](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePage.png) 
 
 
 ## Authors
