@@ -26,6 +26,9 @@ Version 1.0 is up and running
 * [Express](https://expressjs.com/) - used for our web framework
 * [WebRTC](https://webrtc.org/) - Used to generate video calling
 * [Socket.io](https://socket.io/) - Used to create a live chat
+* [MongoDB](https://www.mongodb.com/) - Used to 
+* [Firebase](https://firebase.google.com/) - Used to
+* [React](https://reactjs.org/) - Used to 
 
 ## Contributing
 
