@@ -22,17 +22,26 @@ Version 1.0 is up and running
 
 ## Built With
 
-* [Node.Js](https://nodejs.org/en/) - used as our scalable network application
-* [Express](https://expressjs.com/) - used for our web framework
-* [WebRTC](https://webrtc.org/) - Used to generate video calling
-* [Socket.io](https://socket.io/) - Used to create a live chat
-* [MongoDB](https://www.mongodb.com/) - Used to 
-* [Firebase](https://firebase.google.com/) - Used to
-* [React](https://reactjs.org/) - Used to 
+* [Node.Js](https://nodejs.org/en/) - Node.js is designed to build scalable network applications 
+* [Express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
+* [WebRTC](https://webrtc.org/) - Real-time communication capabilities to your application that works on top of an open standard
+* [Socket.io](https://socket.io/) - Socket.iO enables real-time, bidirectional and event-based communication.
+* [MongoDB](https://www.mongodb.com/) - Distributed database built for modern application developers
+* [Firebase](https://firebase.google.com/) - Realtime cloud storage
+* [React](https://reactjs.org/) - A JavaScript library for building user interfaces 
+* [Heroku](https://dashboard.heroku.com/) - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+* [MaLab](https://mlab.com/) - Database-as-a-service
 
-## Contributing
+## Demonstration
+![Create Assignment](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/createMobile.png) - Mobile
+![Home Page Mobile](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePageMobile.png) - Mobile
+![Virtual Page](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/virtualPage.png) - Desktop
+![Home Page Desktop](https://github.com/christianlMaldonado/Project3/blob/master/client/public/images/homePage.png) - Desktop
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
-Please read [CONTRIBUTING.md](https:// ) for details on our code of conduct, and the process for submitting pull requests to us. //Github link for Contributing MD
+
+
+
 
 ## Authors
 
