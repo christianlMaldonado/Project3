@@ -1,4 +1,4 @@
-# Bit Academy
+# <p align="center">Bit Academy</p>
 
 A Web Resource for the Education System. With Bit Academy we aim to deliver a robust app that eases the user experience and makes connecting a breeze in the digital age. Utilizing seperate teacher and student portals, users will be able to assign/submit assignments, check in to a session, and chat live via webcam. We hope you enjoy our deomonstration of Bit Academy and see the reliablity of it's use as we would love for you to consider it for your use in your education system.
 
