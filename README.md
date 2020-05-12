@@ -18,6 +18,7 @@ Version 1.0 is up and running
 
 * Video chat available for all users in one room
 * Direct messages between teachers/students and students/students
+* Upload, Delete custom profile pictures
 
 
 ## Built With
